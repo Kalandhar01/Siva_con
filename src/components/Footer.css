@@ -200,3 +200,11 @@
     height: 104px;
   }
 }
+
+/* Below ~1600px the fixed-width quote leaves the 16.4% insets too tight
+   against the side columns, so open the layout up a little. */
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .tf-grid {
+    padding: 0 12.5%;
+  }
+}
