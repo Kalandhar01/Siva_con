@@ -10,12 +10,14 @@ import Blog from "@/components/Blog";
 import Footer from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
 import { ScrollTop } from "@/components/ScrollTop";
+import SocialSidebar from "@/components/SocialSidebar";
 
 export default function Home() {
   return (
     <>
       <RevealObserver />
       <div className="site-frame" aria-hidden />
+      <SocialSidebar />
       <Header />
       <main>
         <Hero />

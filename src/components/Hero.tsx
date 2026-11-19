@@ -41,14 +41,6 @@ export default function Hero() {
         aria-hidden
       />
 
-      {/* Vertical socials (left of frame) */}
-      <div className="hero-socials absolute left-[30px] top-1/2 z-20 hidden md:flex flex-col gap-28 text-[10px] font-semibold uppercase tracking-[2px] text-[#1a1a1a]">
-        <a href="#" className="hover:opacity-60 transition-opacity">Pinterest</a>
-        <a href="#" className="hover:opacity-60 transition-opacity">Twitter</a>
-        <a href="#" className="hover:opacity-60 transition-opacity">Facebook</a>
-        <a href="#" className="hover:opacity-60 transition-opacity">Instagram</a>
-      </div>
-
       <div className="relative mx-auto h-full" style={{ maxWidth: 1260, paddingTop: 0 }}>
         {/* Text column */}
         <div className="absolute left-[113px] top-[166px] z-20 w-[550px] max-w-[90%]">
