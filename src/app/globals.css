@@ -23,3 +23,129 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* ------------------------------------------------------------------ */
+/* Landing page effects                                                */
+/* ------------------------------------------------------------------ */
+
+/* Film-grain overlay */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Dark edges */
+.vignette {
+  background: radial-gradient(
+    ellipse 80% 65% at 50% 45%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Slowly panning grid */
+.animated-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    black 20%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 50%,
+    black 20%,
+    transparent 100%
+  );
+  animation: grid-pan 22s linear infinite;
+}
+
+@keyframes grid-pan {
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+/* Shiny sweeping title */
+.shimmer-text {
+  background: linear-gradient(
+    110deg,
+    #ffffff 25%,
+    #52525b 40%,
+    #ffffff 55%,
+    #52525b 70%,
+    #ffffff 85%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shimmer 7s linear infinite;
+}
+
+@keyframes text-shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+
+/* Orbiting rings */
+.orbit {
+  animation: orbit-spin 24s linear infinite;
+}
+
+.orbit-reverse {
+  animation: orbit-spin 34s linear infinite reverse;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Infinite marquee */
+.marquee-track {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Entrance animation */
+.fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animated-grid,
+  .shimmer-text,
+  .orbit,
+  .orbit-reverse,
+  .marquee-track,
+  .fade-up {
+    animation: none;
+  }
+
+  .shimmer-text {
+    background: none;
+    color: #ffffff;
+  }
+}
