@@ -105,7 +105,7 @@ export default function Header() {
         </nav>
 
         {/* RIGHT – Action icons */}
-        <div className="flex items-stretch justify-end md:pr-[86px] ml-auto" style={{ width: "20%", minWidth: 220 }}>
+        <div className="flex items-stretch justify-end ml-auto" style={{ width: "20%", minWidth: 220 }}>
           <a
             href="#contact"
             aria-label="Cart"
