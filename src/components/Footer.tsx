@@ -272,10 +272,9 @@ export default function Footer() {
         <a
           href="#home"
           aria-label="Scroll to top"
-          className="hover:bg-[#8E8E8E] transition-colors"
+          className="right-6 md:right-[110px] hover:bg-[#8E8E8E] transition-colors"
           style={{
             position: "absolute",
-            right: 24,
             top: "50%",
             transform: "translateY(-50%)",
             width: 44,

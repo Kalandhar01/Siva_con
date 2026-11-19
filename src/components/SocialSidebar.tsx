@@ -1,19 +1,21 @@
-export default function SocialSidebar() {
-  const items = [
-    { label: "Pinterest", href: "https://pinterest.com" },
-    { label: "Twitter", href: "https://twitter.com" },
-    { label: "Facebook", href: "https://facebook.com" },
-    { label: "Instagram", href: "https://instagram.com" },
-  ];
+const items = [
+  { label: "Pinterest", href: "https://pinterest.com" },
+  { label: "Twitter", href: "https://twitter.com" },
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "Instagram", href: "https://instagram.com" },
+];
 
+function SocialRail({ side }: { side: "left" | "right" }) {
   return (
     <aside
-      aria-label="Social media"
-      className="hidden md:block fixed left-0 top-0 z-[60] h-screen"
+      aria-label={side === "left" ? "Social media" : "Social media (right)"}
+      className="hidden md:block fixed top-0 z-[60] h-screen"
       style={{
         width: 86,
         background: "#FFFFFF",
-        borderRight: "1px solid #e6e6e6",
+        ...(side === "left"
+          ? { left: 0, borderRight: "1px solid #e6e6e6" }
+          : { right: 0, borderLeft: "1px solid #e6e6e6" }),
       }}
     >
       <div
@@ -49,5 +51,14 @@ export default function SocialSidebar() {
         ))}
       </div>
     </aside>
+  );
+}
+
+export default function SocialSidebar() {
+  return (
+    <>
+      <SocialRail side="left" />
+      <SocialRail side="right" />
+    </>
   );
 }
