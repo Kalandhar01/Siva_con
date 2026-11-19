@@ -85,7 +85,7 @@ export default function Footer() {
           padding: "80px 0",
         }}
       >
-        <div className="mx-auto grid grid-cols-1 gap-14 px-6 md:pl-[110px] lg:grid-cols-[1fr_1.4fr_1fr] lg:gap-10 lg:pl-[146px] lg:pr-[60px]">
+        <div className="mx-auto grid grid-cols-1 gap-14 px-6 md:pl-[110px] md:pr-[110px] lg:grid-cols-[1fr_1.4fr_1fr] lg:gap-10 lg:pl-[146px] lg:pr-[146px]">
           {/* Left — Contacts */}
           <div>
             <h4
