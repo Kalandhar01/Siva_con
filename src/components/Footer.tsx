@@ -32,12 +32,10 @@ export default function Footer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                overflow: "hidden",
               }}
             >
-              <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-                <path d="M24 3L45 15v18L24 45 3 33V15Z" stroke="#1a1a1a" strokeWidth="1.5" fill="none" />
-                <path d="M31 16h-10l-5 6 12 4-5 6H16" stroke="#1a1a1a" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-              </svg>
+              <img src="/sivra/brand-logo.png" alt="SIVRA Buildcon" style={{ height: 70, width: "auto" }} />
             </div>
             <div
               style={{

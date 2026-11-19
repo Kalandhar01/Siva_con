@@ -32,30 +32,25 @@ export default function Header() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-[100] transition-shadow duration-300"
-        style={{ background: "#ffffff", borderBottom: "1px solid #e6e6e6" }}
+        className="sticky top-0 z-[100] transition-all duration-300"
+        style={{
+          background: scrolled ? "#ffffff" : "transparent",
+          borderBottom: "1px solid rgba(0,0,0,0.1)",
+        }}
       >
         <div className="relative mx-auto" style={{ maxWidth: 1440 }}>
           <div className="flex items-center justify-between h-[92px]">
-            {/* Logo tile */}
+            {/* Logo */}
             <a href="#home" className="flex items-center" style={{ height: 92 }}>
-              <div
-                className="flex items-center justify-center"
-                style={{ width: 92, height: 92, background: "#1a1a1a" }}
-              >
-                <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                  <path d="M24 3L45 15v18L24 45 3 33V15Z" stroke="#ffffff" strokeWidth="1.5" fill="none" />
-                  <path d="M31 16h-10l-5 6 12 4-5 6H16" stroke="#ffffff" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-                </svg>
-              </div>
-              <div style={{ marginLeft: 18, lineHeight: 1.1 }}>
-                <div style={{ fontFamily: "var(--font-titillium)", fontSize: 11, fontWeight: 700, letterSpacing: "2px", color: "#1a1a1a" }}>SIVRA</div>
-                <div style={{ fontFamily: "var(--font-titillium)", fontSize: 11, fontWeight: 400, letterSpacing: "2px", color: "#1a1a1a", marginTop: 2 }}>BUILDCON</div>
-              </div>
+              <img
+                src="/sivra/brand-name-logo.png"
+                alt="SIVRA Buildcon"
+                style={{ height: 44, width: "auto", display: "block" }}
+              />
             </a>
 
             {/* Nav */}
-            <nav className="hidden lg:flex items-center gap-9">
+            <nav className="hidden lg:flex items-center" style={{ gap: 0 }}>
               {links.map((l) => (
                 <div key={l.label} className="dropdown-parent relative">
                   <a href={l.href} className="header-link flex items-center gap-1">
@@ -78,14 +73,14 @@ export default function Header() {
             </nav>
 
             {/* Right icons */}
-            <div className="flex items-center gap-6">
-              <a href="#contact" className="relative hidden sm:flex items-center" aria-label="Cart">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="1.5">
+            <div className="flex items-center">
+              <a href="#contact" className="relative hidden sm:flex items-center" aria-label="Cart" style={{ margin: "0 30px 0 0" }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="1.5">
                   <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />
                 </svg>
                 <span
-                  className="absolute -top-2 -right-2 w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold"
-                  style={{ background: "#1a1a1a", color: "#ffffff" }}
+                  className="absolute -top-2 -left-2 w-[22px] h-[22px] rounded-full flex items-center justify-center text-[11px] font-normal"
+                  style={{ background: "#000000", color: "#ffffff" }}
                 >
                   0
                 </span>
@@ -95,22 +90,25 @@ export default function Header() {
                 onClick={() => setSearch(true)}
                 aria-label="Search"
                 className="hidden sm:flex items-center"
+                style={{ margin: "0 30px 0 0", color: "#555555" }}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="1.5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="11" cy="11" r="8" />
                   <path d="M21 21l-4.35-4.35" />
                 </svg>
               </button>
-              <button
-                type="button"
-                onClick={() => setOpen(true)}
-                aria-label="Open menu"
-                className="flex flex-col gap-[5px] w-6"
-              >
-                <span style={{ height: 1.5, width: "100%", background: "#1a1a1a" }} />
-                <span style={{ height: 1.5, width: "70%", background: "#1a1a1a" }} />
-                <span style={{ height: 1.5, width: "100%", background: "#1a1a1a" }} />
-              </button>
+              <div style={{ borderLeft: "1px solid rgba(0,0,0,0.1)", padding: "0 0 0 33px", margin: "0 34px 0 0", display: "flex", alignItems: "center" }}>
+                <button
+                  type="button"
+                  onClick={() => setOpen(true)}
+                  aria-label="Open menu"
+                  className="flex flex-col gap-[5px] w-[22px]"
+                >
+                  <span style={{ height: 1.5, width: "100%", background: "#1a1a1a" }} />
+                  <span style={{ height: 1.5, width: "70%", background: "#1a1a1a" }} />
+                  <span style={{ height: 1.5, width: "100%", background: "#1a1a1a" }} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -130,12 +128,7 @@ export default function Header() {
           </svg>
         </button>
         <div style={{ marginBottom: 40 }}>
-          <div style={{ width: 60, height: 60, background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-            <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
-              <path d="M24 3L45 15v18L24 45 3 33V15Z" stroke="#1a1a1a" strokeWidth="1.5" fill="none" />
-              <path d="M31 16h-10l-5 6 12 4-5 6H16" stroke="#1a1a1a" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-            </svg>
-          </div>
+          <img src="/sivra/brand-logo.png" alt="SIVRA Buildcon" style={{ height: 60, width: "auto", marginBottom: 16 }} />
           <div style={{ fontFamily: "var(--font-titillium)", fontSize: 13, fontWeight: 700, letterSpacing: "2px", color: "#ffffff" }}>SIVRA BUILDCON</div>
         </div>
 
