@@ -11,7 +11,7 @@ export default function SocialSidebar() {
       {/* Left rail — social links */}
       <aside
         aria-label="Social media"
-        className="hidden md:block fixed left-0 top-0 z-[60] h-screen"
+        className="hidden md:block absolute left-0 top-0 z-[60] h-screen"
         style={{
           width: 86,
           background: "#FFFFFF",
@@ -55,7 +55,7 @@ export default function SocialSidebar() {
       {/* Right rail — same reserved space, intentionally empty */}
       <aside
         aria-hidden="true"
-        className="hidden md:block fixed right-0 top-0 z-[60] h-screen pointer-events-none"
+        className="hidden md:block absolute right-0 top-0 z-[60] h-screen pointer-events-none"
         style={{
           width: 86,
           background: "#FFFFFF",
