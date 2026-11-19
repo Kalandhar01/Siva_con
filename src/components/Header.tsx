@@ -29,8 +29,8 @@ export default function Header() {
         <div className="flex items-stretch" style={{ width: "20%", minWidth: 260 }}>
           {/* Logo square */}
           <div
-            className="flex items-center justify-center shrink-0"
-            style={{ width: 108, height: 108, background: "#222222" }}
+            className="flex items-center justify-center shrink-0 w-[108px] md:w-[86px]"
+            style={{ height: 108, background: "#222222" }}
           >
             <img
               src="/sivra/brand-logo.png"
@@ -105,7 +105,7 @@ export default function Header() {
         </nav>
 
         {/* RIGHT – Action icons */}
-        <div className="flex items-stretch justify-end" style={{ width: "20%", minWidth: 220 }}>
+        <div className="flex items-stretch justify-end md:pr-[86px] ml-auto" style={{ width: "20%", minWidth: 220 }}>
           <a
             href="#contact"
             aria-label="Cart"
