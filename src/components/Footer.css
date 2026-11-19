@@ -1,0 +1,202 @@
+.tf-footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.tf-guide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #2c2c2c;
+  pointer-events: none;
+}
+
+.tf-guide-left {
+  left: 5.25%;
+}
+
+.tf-guide-right {
+  right: 5.25%;
+}
+
+.tf-top-band {
+  height: 64px;
+}
+
+.tf-main {
+  position: relative;
+  padding: 48px 0;
+  border-top: 1px solid #2c2c2c;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.tf-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.tf-grid > div {
+  min-width: 0;
+}
+
+.tf-heading {
+  margin: 0 0 32px;
+}
+
+.tf-contact-list,
+.tf-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tf-right-column {
+  text-align: left;
+}
+
+.tf-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tf-quote {
+  max-width: 470px;
+  margin: 36px auto 0;
+}
+
+.tf-quote-break {
+  display: none;
+}
+
+.tf-social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 44px;
+}
+
+.tf-social-link {
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.tf-social-link:hover {
+  border-color: #8e8e8e;
+  color: #ffffff;
+}
+
+.tf-project-link {
+  transition: color 0.3s ease;
+}
+
+.tf-project-link:hover {
+  color: #ffffff;
+}
+
+.tf-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  padding: 0 24px;
+}
+
+.tf-copyright-link {
+  transition: color 0.3s ease;
+}
+
+.tf-copyright-link:hover {
+  color: #cccccc;
+}
+
+@media (min-width: 768px) {
+  .tf-top-band {
+    height: 80px;
+  }
+
+  .tf-main {
+    padding: 64px 0;
+  }
+
+  .tf-grid {
+    gap: 56px;
+    padding: 0 40px;
+  }
+
+  .tf-quote {
+    margin-top: 40px;
+  }
+
+  .tf-social-row {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .tf-top-band {
+    height: 108px;
+  }
+
+  .tf-main {
+    padding: 92px 0;
+  }
+
+  .tf-grid {
+    max-width: none;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    gap: 32px;
+    padding: 0 16.4%;
+  }
+
+  .tf-heading {
+    margin-bottom: 34px;
+  }
+
+  .tf-contact-list {
+    gap: 22px;
+  }
+
+  .tf-project-list {
+    gap: 24px;
+  }
+
+  .tf-right-column {
+    text-align: right;
+  }
+
+  .tf-lockup {
+    gap: 23px;
+  }
+
+  .tf-quote {
+    width: 450px;
+    max-width: none;
+    margin: 42px 0 0 50%;
+    transform: translateX(-50%);
+  }
+
+  .tf-quote-break {
+    display: block;
+  }
+
+  .tf-social-row {
+    margin-top: 50px;
+  }
+
+  .tf-bottom {
+    height: 104px;
+  }
+}

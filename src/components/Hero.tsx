@@ -43,7 +43,7 @@ export default function Hero() {
 
       <div className="relative mx-auto h-full" style={{ maxWidth: 1260, paddingTop: 0 }}>
         {/* Text column */}
-        <div className="absolute left-[113px] top-[166px] z-20 w-[550px] max-w-[90%]">
+        <div className="absolute left-[113px] top-[182px] z-20 w-[550px] max-w-[90%]">
           <div key={`t-${index}`} className="hero-slide-enter">
             <h1
               style={{
@@ -82,7 +82,7 @@ export default function Hero() {
         {/* Image */}
         <div
           key={`i-${index}`}
-          className="hero-image-enter absolute right-[10px] top-[-19px] z-10 hidden md:block"
+          className="hero-image-enter absolute right-[10px] top-[0px] z-10 hidden md:block"
           style={{ width: 616, height: 584, overflow: "hidden" }}
         >
           <Image
