@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <>
       <RevealObserver />
-      <div className="site-frame" aria-hidden />
       <SocialSidebar />
       <Header />
       <main>
