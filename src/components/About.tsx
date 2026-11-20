@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <section id="about" className="relative py-0" style={{ background: "#ffffff" }}>
-      <div className="relative" style={{ maxWidth: 1440, margin: "0 auto" }}>
+      <div className="relative px-6 md:px-[90px]" style={{ maxWidth: "none", margin: "0 auto" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Image (bleeds left) */}
           <div className="relative" style={{ minHeight: 611 }}>
@@ -21,7 +21,7 @@ export default function About() {
           <div
             data-reveal
             className="reveal px-6 lg:px-0 flex flex-col justify-center"
-            style={{ padding: "80px 90px 80px 110px" }}
+            style={{ padding: "80px 10px 80px 80px" }}
           >
             <span className="eyebrow">[ Main Principes ]</span>
             <h2 className="section-title" style={{ marginTop: 18, fontSize: 40 }}>

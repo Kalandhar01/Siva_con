@@ -16,7 +16,7 @@ export default function Blog() {
         backgroundBlendMode: "multiply",
       }}
     >
-      <div className="relative mx-auto" style={{ maxWidth: 1260, padding: "0 30px" }}>
+      <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
           <div className="reveal">
             <span className="eyebrow">[ Our Blog ]</span>
