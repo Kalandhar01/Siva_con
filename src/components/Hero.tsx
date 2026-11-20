@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       id="home"
       className="relative overflow-hidden"
-      style={{ height: 833, background: "#ffffff" }}
+      style={{ height: 733, background: "#ffffff" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -43,14 +43,14 @@ export default function Hero() {
 
       <div className="relative mx-auto h-full" style={{ maxWidth: 1260, paddingTop: 0 }}>
         {/* Text column */}
-        <div className="absolute left-[113px] top-[182px] z-20 w-[550px] max-w-[90%]">
+        <div className="absolute left-[113px] top-[171px] z-20 w-[430px] max-w-[90%]">
           <div key={`t-${index}`} className="hero-slide-enter">
             <h1
               style={{
                 fontFamily: "var(--font-titillium)",
-                fontSize: 72,
+                fontSize: 51,
                 fontWeight: 300,
-                lineHeight: "80px",
+                lineHeight: "57px",
                 color: "#1a1a1a",
                 letterSpacing: 0,
               }}
@@ -62,17 +62,28 @@ export default function Hero() {
             <p
               style={{
                 fontFamily: "var(--font-raleway)",
-                fontSize: 18,
-                lineHeight: "32px",
+                fontSize: 13,
+                lineHeight: "23px",
                 color: "#555555",
-                marginTop: 30,
-                maxWidth: 530,
+                marginTop: 18,
+                maxWidth: 380,
               }}
             >
               Our goal is to create reliable relations with customers, that is why, from the first day of the activity of the studio.
             </p>
-            <div style={{ marginTop: 44 }}>
-              <a href="#portfolio" className="btn">
+            <div style={{ marginTop: 35 }}>
+              <a
+                href="#portfolio"
+                className="btn"
+                style={{
+                  width: 120,
+                  height: 42,
+                  padding: 0,
+                  fontSize: 9,
+                  lineHeight: "42px",
+                  letterSpacing: 0.04,
+                }}
+              >
                 View Projects
               </a>
             </div>
@@ -83,7 +94,7 @@ export default function Hero() {
         <div
           key={`i-${index}`}
           className="hero-image-enter absolute right-[10px] top-[0px] z-10 hidden md:block"
-          style={{ width: 616, height: 584, overflow: "hidden" }}
+          style={{ width: 621, height: 615, overflow: "hidden" }}
         >
           <Image
             src={slides[index].image}
@@ -115,7 +126,7 @@ export default function Hero() {
         </div>
 
         {/* Arrows */}
-        <div className="absolute z-20 hidden md:flex gap-6" style={{ left: 654, top: 530 }}>
+        <div className="absolute z-20 hidden md:flex gap-6" style={{ left: 654, top: 570 }}>
           <button
             type="button"
             onClick={() => go(-1)}
