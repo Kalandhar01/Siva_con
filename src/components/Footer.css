@@ -1,3 +1,8 @@
+.tf-footer,
+.tf-footer * {
+  font-family: "Titillium Web", sans-serif;
+}
+
 .tf-footer {
   position: relative;
   width: 100%;
