@@ -4,8 +4,10 @@ const mapsLink = "https://share.google/60NN9PWCanCh5kqy0";
 
 const contactRows = [
   {
+    label: "Visit Us",
     text: "2102/4 Public Office Road, Velipalayam, Nagapattinam 611001, Tamil Nadu",
     href: mapsLink,
+    wrap: true,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" />
@@ -14,6 +16,7 @@ const contactRows = [
     ),
   },
   {
+    label: "Email Us",
     text: "support@sivraconstructions.com",
     href: "mailto:support@sivraconstructions.com",
     icon: (
@@ -24,6 +27,7 @@ const contactRows = [
     ),
   },
   {
+    label: "Call Us",
     text: "+91 84899 83007",
     href: "tel:+918489983007",
     icon: (
@@ -33,6 +37,7 @@ const contactRows = [
     ),
   },
   {
+    label: "Business Hours",
     text: "Mon – Sat: 9:00 AM – 6:00 PM",
     href: null,
     icon: (
@@ -125,28 +130,57 @@ export default function Footer() {
                   key={row.text}
                   style={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     gap: 20,
-                    color: "#8E8E8E",
-                    fontFamily: "var(--font-raleway)",
-                    fontSize: 16.5,
-                    lineHeight: 1.5,
                   }}
                 >
-                  <span style={{ display: "inline-flex", flexShrink: 0, color: "#8E8E8E" }}>{row.icon}</span>
-                  {row.href ? (
-                    <a
-                      href={row.href}
-                      target={row.href.startsWith("http") ? "_blank" : undefined}
-                      rel={row.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      style={{ color: "inherit", textDecoration: "none", whiteSpace: "nowrap" }}
-                      className="hover:text-white"
+                  <span style={{ display: "inline-flex", flexShrink: 0, color: "#8E8E8E", marginTop: 8 }}>{row.icon}</span>
+                  <span style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-titillium)",
+                        fontSize: 11,
+                        fontWeight: 600,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "#6E6E6E",
+                        lineHeight: 1.3,
+                        marginBottom: 2,
+                      }}
                     >
-                      {row.text}
-                    </a>
-                  ) : (
-                    <span style={{ whiteSpace: "nowrap" }}>{row.text}</span>
-                  )}
+                      {row.label}
+                    </span>
+                    {row.href ? (
+                      <a
+                        href={row.href}
+                        target={row.href.startsWith("http") ? "_blank" : undefined}
+                        rel={row.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        style={{
+                          color: "#8E8E8E",
+                          textDecoration: "none",
+                          whiteSpace: row.wrap ? "normal" : "nowrap",
+                          fontFamily: "var(--font-raleway)",
+                          fontSize: 16.5,
+                          lineHeight: 1.5,
+                        }}
+                        className="hover:text-white"
+                      >
+                        {row.text}
+                      </a>
+                    ) : (
+                      <span
+                        style={{
+                          color: "#8E8E8E",
+                          whiteSpace: "nowrap",
+                          fontFamily: "var(--font-raleway)",
+                          fontSize: 16.5,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {row.text}
+                      </span>
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -166,9 +200,9 @@ export default function Footer() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/sivra/brand-name-logo.png"
+                  src="/sivra/brand-logo.png"
                   alt="SIVRA Buildcon"
-                  style={{ display: "block", width: "100%", height: "100%", objectFit: "contain" }}
+                  style={{ display: "block", width: "100%", height: "100%", objectFit: "contain", filter: "invert(1)" }}
                 />
               </span>
             </div>
