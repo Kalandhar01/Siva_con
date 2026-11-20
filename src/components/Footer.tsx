@@ -190,7 +190,7 @@ export default function Footer() {
                   display: "inline-flex",
                   width: 180,
                   height: 92,
-                  background: "#FFFFFF",
+                  background: "transparent",
                   flexShrink: 0,
                 }}
               >
@@ -203,7 +203,6 @@ export default function Footer() {
                     width: "100%",
                     height: "100%",
                     objectFit: "contain",
-                    filter: "invert(1)",
                     padding: 12,
                   }}
                 />
