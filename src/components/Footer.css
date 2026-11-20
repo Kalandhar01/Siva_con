@@ -51,17 +51,36 @@
   min-width: 0;
 }
 
-/* Mobile stack: brand + quote, then Services, then Contacts */
+/* Mobile stack: brand + quote, then Services, then Contacts,
+   with the social links at the very bottom. */
 .tf-center-column {
+  display: contents;
+}
+
+.tf-lockup,
+.tf-quote,
+.tf-social-row {
+  min-width: 0;
+}
+
+.tf-lockup {
   order: 1;
 }
 
-.tf-right-column {
+.tf-quote {
   order: 2;
 }
 
-.tf-left-column {
+.tf-right-column {
   order: 3;
+}
+
+.tf-left-column {
+  order: 4;
+}
+
+.tf-social-row {
+  order: 5;
 }
 
 .tf-heading {
@@ -196,6 +215,7 @@
   }
 
   .tf-center-column {
+    display: block;
     order: 2;
   }
 
