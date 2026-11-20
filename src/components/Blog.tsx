@@ -25,8 +25,8 @@ export default function Blog() {
       }}
     >
       <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
-          <div className="reveal">
+        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
+          <div>
             <span
               style={{
                 fontFamily: '"Titillium Web", sans-serif',
@@ -93,7 +93,7 @@ export default function Blog() {
           {posts.map((p, i) => (
             <article
               key={p.title}
-              className="blog-card"
+              className="blog-card reveal"
               data-reveal
               style={{
                 background: "#FFFFFF",
