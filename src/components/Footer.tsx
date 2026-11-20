@@ -192,17 +192,24 @@ export default function Footer() {
               <span
                 style={{
                   display: "inline-flex",
-                  width: 104,
-                  height: 104,
+                  width: 180,
+                  height: 92,
                   background: "#FFFFFF",
                   flexShrink: 0,
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/sivra/brand-logo.png"
+                  src="/sivra/brand-name-logo.png"
                   alt="SIVRA Buildcon"
-                  style={{ display: "block", width: "100%", height: "100%", objectFit: "contain", filter: "invert(1)" }}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    filter: "invert(1)",
+                    padding: 12,
+                  }}
                 />
               </span>
             </div>
