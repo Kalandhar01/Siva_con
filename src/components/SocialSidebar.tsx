@@ -13,14 +13,14 @@ export default function SocialSidebar() {
         aria-label="Social media"
         className="hidden md:block absolute left-0 top-0 z-[60] h-screen"
         style={{
-          width: 86,
+          width: 90,
           background: "#FFFFFF",
           borderRight: "1px solid #e6e6e6",
         }}
       >
         <div
           className="flex flex-col items-center justify-center"
-          style={{ height: "100%", gap: 40 }}
+          style={{ height: "calc(100% - 105px)", gap: 40 }}
         >
           {items.map((item) => (
             <a
@@ -31,10 +31,14 @@ export default function SocialSidebar() {
               aria-label={item.label}
               className="hover:opacity-60 transition-opacity"
               style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 color: "#333333",
                 textDecoration: "none",
                 fontFamily: "var(--font-raleway)",
-                fontSize: 13,
+                fontSize: 12.5,
                 fontWeight: 400,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
@@ -57,7 +61,7 @@ export default function SocialSidebar() {
         aria-hidden="true"
         className="hidden md:block absolute right-0 top-0 z-[60] h-screen pointer-events-none"
         style={{
-          width: 86,
+          width: 90,
           background: "#FFFFFF",
           borderLeft: "1px solid #e6e6e6",
         }}
