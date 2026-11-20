@@ -19,14 +19,25 @@ export default function Blog() {
       <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
           <div className="reveal">
-            <span className="eyebrow">[ Our Blog ]</span>
-            <h2 className="section-title" style={{ marginTop: 18 }}>
+            <span
+              style={{
+                fontFamily: '"Titillium Web", sans-serif',
+                fontSize: 14,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "#9F9E9E",
+              }}
+            >
+              [ Our Blog ]
+            </span>
+            <h2 className="section-title" style={{ marginTop: 18, fontSize: 42, fontWeight: 400 }}>
               Read Our Latest News
             </h2>
             <div className="dot-sep" style={{ marginTop: 22 }} />
           </div>
           <div className="reveal">
-            <a href="#" className="btn btn-outline">
+            <a href="#" className="btn">
               View All
             </a>
           </div>
@@ -53,8 +64,8 @@ export default function Blog() {
                     left: 20,
                     background: "#1a1a1a",
                     color: "#ffffff",
-                    fontFamily: "var(--font-titillium)",
-                    fontSize: 10,
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 11,
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "2px",
@@ -67,8 +78,8 @@ export default function Blog() {
               <div style={{ padding: "24px 0" }}>
                 <div
                   style={{
-                    fontFamily: "var(--font-titillium)",
-                    fontSize: 11,
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 12,
                     color: "#888888",
                     textTransform: "uppercase",
                     letterSpacing: "1.5px",
@@ -79,11 +90,11 @@ export default function Blog() {
                 </div>
                 <h4
                   style={{
-                    fontFamily: "var(--font-titillium)",
-                    fontSize: 22,
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 24,
                     fontWeight: 400,
                     color: "#1a1a1a",
-                    lineHeight: 1.3,
+                    lineHeight: "36px",
                     marginBottom: 12,
                   }}
                 >
