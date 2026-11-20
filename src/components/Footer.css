@@ -51,6 +51,19 @@
   min-width: 0;
 }
 
+/* Mobile stack: brand + quote, then Services, then Contacts */
+.tf-center-column {
+  order: 1;
+}
+
+.tf-right-column {
+  order: 2;
+}
+
+.tf-left-column {
+  order: 3;
+}
+
 .tf-heading {
   margin: 0 0 32px;
 }
@@ -178,7 +191,16 @@
     gap: 24px;
   }
 
+  .tf-left-column {
+    order: 1;
+  }
+
+  .tf-center-column {
+    order: 2;
+  }
+
   .tf-right-column {
+    order: 3;
     text-align: right;
   }
 

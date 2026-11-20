@@ -119,7 +119,7 @@ export default function Footer() {
       <div className="tf-main">
         <div className="tf-grid">
           {/* Left — Contacts */}
-          <div>
+          <div className="tf-left-column">
             <h4 className="tf-heading" style={headingStyle}>
               Contacts
             </h4>
@@ -183,7 +183,7 @@ export default function Footer() {
           </div>
 
           {/* Center — Brand lockup, quote, socials */}
-          <div style={{ textAlign: "center" }}>
+          <div className="tf-center-column" style={{ textAlign: "center" }}>
             <div className="tf-lockup">
               <span
                 style={{
