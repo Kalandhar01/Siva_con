@@ -99,8 +99,7 @@ const socials = [
 ];
 
 const headingStyle = {
-  fontFamily: "var(--font-titillium)",
-  fontSize: 22.5,
+  fontSize: 24,
   fontWeight: 400,
   lineHeight: 1.2,
   color: "#FFFFFF",
@@ -138,7 +137,6 @@ export default function Footer() {
                   <span style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
                     <span
                       style={{
-                        fontFamily: "var(--font-titillium)",
                         fontSize: 11,
                         fontWeight: 600,
                         letterSpacing: "0.1em",
@@ -159,11 +157,10 @@ export default function Footer() {
                           color: "#8E8E8E",
                           textDecoration: "none",
                           whiteSpace: row.wrap ? "normal" : "nowrap",
-                          fontFamily: "var(--font-raleway)",
                           fontSize: 16.5,
                           lineHeight: 1.5,
                         }}
-                        className="hover:text-white"
+                        className="hover:text-white transition-colors"
                       >
                         {row.text}
                       </a>
@@ -172,7 +169,6 @@ export default function Footer() {
                         style={{
                           color: "#8E8E8E",
                           whiteSpace: "nowrap",
-                          fontFamily: "var(--font-raleway)",
                           fontSize: 16.5,
                           lineHeight: 1.5,
                         }}
@@ -200,7 +196,7 @@ export default function Footer() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/sivra/brand-name-logo.png"
+                  src="/sivra/Brand_Name-logo.png"
                   alt="SIVRA Buildcon"
                   style={{
                     display: "block",
@@ -217,7 +213,6 @@ export default function Footer() {
             <p
               className="tf-quote"
               style={{
-                fontFamily: "var(--font-raleway)",
                 fontSize: 16.5,
                 lineHeight: 2,
                 color: "#8E8E8E",
@@ -267,7 +262,6 @@ export default function Footer() {
                     href="#services"
                     className="tf-project-link"
                     style={{
-                      fontFamily: "var(--font-raleway)",
                       fontSize: 16.5,
                       lineHeight: 1.5,
                       color: "#8E8E8E",
@@ -287,7 +281,6 @@ export default function Footer() {
       <div className="tf-bottom">
         <p
           style={{
-            fontFamily: "var(--font-raleway)",
             fontSize: 14,
             lineHeight: 1.5,
             color: "#777777",
