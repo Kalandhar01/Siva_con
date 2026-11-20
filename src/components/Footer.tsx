@@ -1,8 +1,11 @@
 import "./Footer.css";
 
+const mapsLink = "https://share.google/60NN9PWCanCh5kqy0";
+
 const contactRows = [
   {
-    text: "411 University St, Seattle, USA",
+    text: "2102/4 Public Office Road, Velipalayam, Nagapattinam 611001, Tamil Nadu",
+    href: mapsLink,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" />
@@ -11,7 +14,8 @@ const contactRows = [
     ),
   },
   {
-    text: "theratio_interior@mail.com",
+    text: "support@sivraconstructions.com",
+    href: "mailto:support@sivraconstructions.com",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="2.5" y="5" width="19" height="14" rx="1.5" />
@@ -20,19 +24,32 @@ const contactRows = [
     ),
   },
   {
-    text: "+1 800 456 789 123",
+    text: "+91 84899 83007",
+    href: "tel:+918489983007",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
       </svg>
     ),
   },
+  {
+    text: "Mon – Sat: 9:00 AM – 6:00 PM",
+    href: null,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </svg>
+    ),
+  },
 ];
 
-const projects = [
-  "Stylish Family Appartment",
-  "Modern Villa in Belgium",
-  "Private House in Spain",
+const services = [
+  "Premium Constructions",
+  "Interiors",
+  "Architectural Design",
+  "2D / 3D Plan Approval",
+  "Real Estate - promoters",
 ];
 
 const socials = [
@@ -117,7 +134,19 @@ export default function Footer() {
                   }}
                 >
                   <span style={{ display: "inline-flex", flexShrink: 0, color: "#8E8E8E" }}>{row.icon}</span>
-                  <span style={{ whiteSpace: "nowrap" }}>{row.text}</span>
+                  {row.href ? (
+                    <a
+                      href={row.href}
+                      target={row.href.startsWith("http") ? "_blank" : undefined}
+                      rel={row.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      style={{ color: "inherit", textDecoration: "none", whiteSpace: "nowrap" }}
+                      className="hover:text-white"
+                    >
+                      {row.text}
+                    </a>
+                  ) : (
+                    <span style={{ whiteSpace: "nowrap" }}>{row.text}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -137,28 +166,10 @@ export default function Footer() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/theratio-mark.svg"
-                  alt="Theratio mark"
-                  style={{ display: "block", width: "100%", height: "100%" }}
+                  src="/sivra/brand-name-logo.png"
+                  alt="SIVRA Buildcon"
+                  style={{ display: "block", width: "100%", height: "100%", objectFit: "contain" }}
                 />
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-titillium)",
-                  fontSize: 17,
-                  fontWeight: 400,
-                  color: "#D0D0D0",
-                  letterSpacing: "0.05em",
-                  lineHeight: 1.2,
-                  textTransform: "uppercase",
-                  textAlign: "left",
-                }}
-              >
-                Theratio
-                <br />
-                Interior
-                <br />
-                Studio
               </span>
             </div>
 
@@ -203,16 +214,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right — Latest Projects */}
+          {/* Right — Services */}
           <div className="tf-right-column">
             <h4 className="tf-heading" style={headingStyle}>
-              Latest Projects
+              Services
             </h4>
             <ul className="tf-project-list">
-              {projects.map((project) => (
-                <li key={project}>
+              {services.map((service) => (
+                <li key={service}>
                   <a
-                    href="#portfolio"
+                    href="#services"
                     className="tf-project-link"
                     style={{
                       fontFamily: "var(--font-raleway)",
@@ -222,7 +233,7 @@ export default function Footer() {
                       whiteSpace: "nowrap",
                     }}
                   >
-                    {project}
+                    {service}
                   </a>
                 </li>
               ))}
@@ -243,17 +254,7 @@ export default function Footer() {
             margin: 0,
           }}
         >
-          Copyright © 2026 Theratio by{" "}
-          <a
-            href="https://themeforest.net/user/oceanthemes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tf-copyright-link"
-            style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: 2 }}
-          >
-            OceanThemes
-          </a>
-          . All Rights Reserved.
+          Copyright © 2026 SIVRA Buildcon. All Rights Reserved.
         </p>
       </div>
     </footer>

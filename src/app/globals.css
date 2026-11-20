@@ -347,6 +347,24 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- Scroll to top ---------- */
+/* Icon hover */
+.nav-icon {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-icon:hover {
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+
+/* Cart badge pulse */
+.cart-badge {
+  animation: cartPulse 2s ease-in-out infinite;
+}
+@keyframes cartPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.08); }
+}
+
 .scroll-top {
   position: fixed;
   right: 32px;
@@ -371,27 +389,35 @@ a { color: inherit; text-decoration: none; }
 .header-link {
   font-family: var(--font-titillium);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0;
-  color: var(--ink);
+  color: #333333;
   position: relative;
-  padding: 0 17px 0 0;
+  padding: 0 17px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  transition: color 0.25s ease;
+  height: 92px;
+}
+.header-link:hover {
+  color: #000000;
+  font-weight: 600;
 }
 .header-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 17px;
+  bottom: 0px;
   width: 0;
-  height: 1px;
-  background: var(--ink);
+  height: 1.5px;
+  background: #1A1A1A;
   transition: width 0.3s ease;
 }
-.header-link:hover::after { width: 100%; }
+.header-link:hover::after {
+  width: calc(100% - 34px);
+}
 
 /* ---------- Dropdown ---------- */
 .dropdown {
@@ -433,14 +459,14 @@ a { color: inherit; text-decoration: none; }
 .side-menu {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 470px;
   max-width: 100vw;
   height: 100vh;
   background: var(--ink);
   color: #ffffff;
   z-index: 200;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   overflow-y: auto;
   padding: 40px 40px 60px;
