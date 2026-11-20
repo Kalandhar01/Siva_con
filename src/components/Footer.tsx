@@ -196,6 +196,7 @@ export default function Footer() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  className="tf-brand-logo"
                   src="/sivra/Brand_Name-logo.png"
                   alt="SIVRA Buildcon"
                   style={{

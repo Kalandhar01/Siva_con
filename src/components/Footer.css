@@ -3,6 +3,31 @@
   font-family: "Titillium Web", sans-serif;
 }
 
+/* Subtle "living" glow on the brand logo */
+.tf-brand-logo {
+  animation: tfLogoGlow 3.6s ease-in-out infinite;
+}
+
+@keyframes tfLogoGlow {
+  0%,
+  100% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.35));
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-brand-logo {
+    animation: none;
+  }
+}
+
 .tf-footer {
   position: relative;
   width: 100%;
