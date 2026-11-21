@@ -43,8 +43,8 @@ export default function Testimonials() {
         backgroundBlendMode: "multiply",
       }}
     >
-      <div className="relative mx-auto px-6 md:px-[210px]" style={{ maxWidth: "none" }}>
-        <div className="grid grid-cols-1 lg:grid-cols-[54%_46%] gap-8 items-start">
+      <div className="relative mx-auto px-6 md:px-[120px]" style={{ maxWidth: "none" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[56%_44%] gap-8 items-start">
           {/* Left — wide landscape photo, positioned higher */}
           <div className="reveal" data-reveal>
             <div style={{ aspectRatio: "16 / 10.5", overflow: "hidden" }}>
@@ -62,7 +62,7 @@ export default function Testimonials() {
           {/* Right — marble testimonial panel, shifted down */}
           <div
             data-reveal
-            className="reveal relative lg:mt-12 p-6 md:p-12 lg:p-16 min-h-[420px] md:min-h-[520px]"
+            className="reveal relative lg:mt-12 p-6 md:p-12 lg:p-16 min-h-[460px] md:min-h-[560px]"
             style={{
               background: "#F7F7F7",
               backgroundImage: "url(/sivra/marble-bg.png)",
