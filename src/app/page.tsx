@@ -16,19 +16,22 @@ export default function Home() {
   return (
     <>
       <RevealObserver />
-      <SocialSidebar />
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Services />
-        <Stats />
-        <Pricing />
-        <Testimonials />
-        <Blog />
-      </main>
-      <Footer />
+      <div className="relative">
+        <div className="site-frame" aria-hidden />
+        <SocialSidebar />
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Services />
+          <Stats />
+          <Pricing />
+          <Testimonials />
+          <Blog />
+        </main>
+        <Footer />
+      </div>
       <ScrollTop />
     </>
   );

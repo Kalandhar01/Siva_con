@@ -11,7 +11,7 @@ const slides = [
 
 const S = 1440 / 1660;
 const SIDEBAR_W = Math.round(87 * S);
-const TEXT_X = Math.round(217 * S);
+const TEXT_X = 191;
 const IMG_X = 850;
 const IMG_W = 760;
 const IMG_H = 752;
@@ -49,43 +49,7 @@ export default function Hero() {
       />
 
       {/* Left social sidebar */}
-      <aside
-        className="hidden md:flex flex-col items-center justify-center"
-        style={{
-          position: "absolute",
-          left: 0,
-          top: 92,
-          width: SIDEBAR_W,
-          height: 808 - 92,
-          borderRight: "1px solid rgba(0,0,0,0.08)",
-          zIndex: 20,
-        }}
-        aria-label="Social media"
-      >
-        <div className="flex flex-col items-center justify-center" style={{ gap: 44 }}>
-          {["Pinterest", "Twitter", "Facebook", "Instagram"].map((label) => (
-            <a
-              key={label}
-              href="#"
-              className="hover:opacity-60 transition-opacity"
-              style={{
-                color: "#1a1a1a",
-                textDecoration: "none",
-                fontFamily: "var(--font-titillium)",
-                fontSize: 11,
-                fontWeight: 400,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                writingMode: "vertical-rl",
-                transform: "rotate(180deg)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-      </aside>
+      {/* Removed - SocialSidebar component in page.tsx handles this */}
 
       <div className="relative h-full" style={{ paddingTop: 92 }}>
         {/* Text column */}
@@ -94,14 +58,14 @@ export default function Hero() {
           style={{
             left: TEXT_X,
             top: 92 + 70,
-            width: 660,
+            width: "min(950px, calc(100vw - 928px))",
           }}
         >
           <div key={`t-${index}`} className="hero-slide-enter" style={{ position: "relative" }}>
-            {/* Circular badge stamp */}
+            {/* Circular badge stamp - top right of headline */}
             <div
               className="circle-text absolute"
-              style={{ right: -20, top: -30, width: 100, height: 100, zIndex: 5 }}
+              style={{ right: -10, top: -20, width: 100, height: 100, zIndex: 5 }}
             >
               <svg viewBox="0 0 100 100" width="100" height="100">
                 <defs>
@@ -124,6 +88,7 @@ export default function Hero() {
                 color: "#1A1A1A",
                 letterSpacing: 0,
                 margin: 0,
+                position: "relative",
               }}
             >
               {slides[index].title[0]}
