@@ -24,7 +24,7 @@ export default function Blog() {
         backgroundBlendMode: "multiply",
       }}
     >
-      <div className="relative mx-auto px-6 md:px-[150px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6 md:px-[180px]" style={{ maxWidth: "none" }}>
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
           <div>
             <span

@@ -18,7 +18,7 @@ export default function Skills() {
         paddingBottom: 0,
       }}
     >
-      <div className="relative mx-auto px-6 md:px-[150px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6 md:px-[180px]" style={{ maxWidth: "none" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start" data-reveal>
           <div className="reveal">
             <span className="eyebrow">[ Our Skills ]</span>

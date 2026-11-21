@@ -21,7 +21,7 @@ export default function About() {
           <div
             data-reveal
             className="reveal px-6 lg:px-0 flex flex-col justify-center"
-            style={{ padding: "80px 10px 80px 20px" }}
+            style={{ padding: "80px 10px 80px 10px" }}
           >
             <span className="eyebrow">[ Main Principes ]</span>
             <h2 className="section-title" style={{ marginTop: 18, fontSize: 40 }}>
