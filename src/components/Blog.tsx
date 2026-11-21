@@ -97,7 +97,7 @@ export default function Blog() {
               data-reveal
               style={{
                 background: "#FFFFFF",
-                border: "1px solid #CCCCCC",
+                border: "1.5px solid #B0B0B0",
                 boxShadow: "0 2px 10px rgba(0, 0, 0, 0.05)",
                 padding: 24,
                 overflow: "hidden",
