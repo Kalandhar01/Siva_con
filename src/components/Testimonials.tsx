@@ -7,6 +7,7 @@ import { testimonials } from "@/lib/site-data";
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
+  const [paused, setPaused] = useState(false);
 
   const go = (d: number) => {
     setFade(false);
@@ -15,6 +16,12 @@ export default function Testimonials() {
       setFade(true);
     }, 200);
   };
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => go(1), 6000);
+    return () => clearInterval(t);
+  }, [paused]);
 
   const t = testimonials[index];
 
@@ -66,7 +73,7 @@ export default function Testimonials() {
             <span
               style={{
                 fontFamily: '"Titillium Web", sans-serif',
-                fontSize: 11,
+                fontSize: 12,
                 fontWeight: 600,
                 textTransform: "uppercase",
                 letterSpacing: "0.15em",
@@ -80,7 +87,7 @@ export default function Testimonials() {
             <h2
               style={{
                 fontFamily: '"Titillium Web", sans-serif',
-                fontSize: 40,
+                fontSize: 44,
                 fontWeight: 400,
                 color: "#1A1A1A",
                 lineHeight: 1.2,
@@ -108,7 +115,7 @@ export default function Testimonials() {
               <p
                 style={{
                   fontFamily: '"Titillium Web", sans-serif',
-                  fontSize: 15,
+                  fontSize: 19,
                   color: "#7A7A7A",
                   lineHeight: 1.75,
                   margin: 0,
@@ -119,8 +126,45 @@ export default function Testimonials() {
               </p>
             </div>
 
-            <div className="flex" style={{ marginTop: 28, justifyContent: "flex-end", gap: 18 }}>
-              <button
+            <div
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              style={{
+                marginTop: 32,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 16,
+              }}
+            >
+              <div style={{ display: "flex", gap: 8 }}>
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    aria-label={`Go to testimonial ${i + 1}`}
+                    onClick={() => {
+                      setFade(false);
+                      setTimeout(() => {
+                        setIndex(i);
+                        setFade(true);
+                      }, 200);
+                    }}
+                    style={{
+                      width: i === index ? 24 : 8,
+                      height: 8,
+                      borderRadius: 4,
+                      border: "none",
+                      background: i === index ? "#1A1A1A" : "#CFCFCF",
+                      cursor: "pointer",
+                      transition: "width 0.3s ease, background 0.3s ease",
+                      padding: 0,
+                    }}
+                  />
+                ))}
+              </div>
+              <div style={{ display: "flex", gap: 22 }}>
+                <button
                 type="button"
                 onClick={() => go(-1)}
                 aria-label="Previous testimonial"
@@ -129,7 +173,7 @@ export default function Testimonials() {
                   border: "none",
                   cursor: "pointer",
                   color: "#222222",
-                  fontSize: 16,
+                  fontSize: 20,
                   padding: 0,
                   lineHeight: 1,
                 }}
@@ -145,13 +189,16 @@ export default function Testimonials() {
                   border: "none",
                   cursor: "pointer",
                   color: "#222222",
-                  fontSize: 16,
+                  fontSize: 20,
                   padding: 0,
                   lineHeight: 1,
                 }}
               >
-                →
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
               </button>
+            </div>
             </div>
           </div>
         </div>
