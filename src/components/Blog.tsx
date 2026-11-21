@@ -115,8 +115,8 @@ export default function Blog() {
                 <span
                   style={{
                     position: "absolute",
-                    bottom: 0,
-                    left: 0,
+                    bottom: 14,
+                    left: 14,
                     background: "#222222",
                     color: "#ffffff",
                     fontFamily: '"Titillium Web", sans-serif',
@@ -124,7 +124,7 @@ export default function Blog() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.15em",
-                    padding: "8px 14px",
+                    padding: "6px 12px",
                   }}
                 >
                   {badgeLabels[i]}
@@ -163,7 +163,7 @@ export default function Blog() {
                   </a>
                 </h4>
                 <p style={{ fontSize: 13, lineHeight: "20px", color: "#888888", fontFamily: '"Titillium Web", sans-serif' }}>
-                  A faceting effect livens up and....
+                  A faceting effect livens up and...
                 </p>
               </div>
             </article>
