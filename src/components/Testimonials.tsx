@@ -119,33 +119,7 @@ export default function Testimonials() {
               </p>
             </div>
 
-            <div style={{ marginTop: 24 }}>
-              <div
-                style={{
-                  fontFamily: '"Titillium Web", sans-serif',
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: "#1A1A1A",
-                }}
-              >
-                {t.name}
-              </div>
-              <div
-                style={{
-                  fontFamily: '"Titillium Web", sans-serif',
-                  fontSize: 12,
-                  fontWeight: 400,
-                  color: "#888888",
-                  marginTop: 4,
-                  textTransform: "uppercase",
-                  letterSpacing: "1.5px",
-                }}
-              >
-                {t.role}
-              </div>
-            </div>
-
-            <div className="flex gap-4" style={{ marginTop: 28, justifyContent: "flex-end" }}>
+            <div className="flex" style={{ marginTop: 28, justifyContent: "flex-end", gap: 18 }}>
               <button
                 type="button"
                 onClick={() => go(-1)}
@@ -174,7 +148,6 @@ export default function Testimonials() {
                   fontSize: 16,
                   padding: 0,
                   lineHeight: 1,
-                  marginLeft: 18,
                 }}
               >
                 →
