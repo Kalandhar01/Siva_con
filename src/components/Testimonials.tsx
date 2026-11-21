@@ -26,10 +26,9 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative"
+      className="relative py-16 md:py-[120px]"
       style={{
         background: "#ffffff",
-        padding: "120px 0 100px",
         backgroundImage: "url(/sivra/sketch-bg.png)",
         backgroundSize: "auto",
         backgroundPosition: "right center",
@@ -56,14 +55,12 @@ export default function Testimonials() {
           {/* Right — marble testimonial panel, shifted down */}
           <div
             data-reveal
-            className="reveal relative lg:mt-12"
+            className="reveal relative lg:mt-12 p-6 md:p-12 lg:p-16 min-h-[420px] md:min-h-[520px]"
             style={{
               background: "#F7F7F7",
               backgroundImage: "url(/sivra/marble-bg.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              padding: "56px 64px",
-              minHeight: 520,
             }}
           >
             <span
