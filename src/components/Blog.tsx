@@ -99,6 +99,7 @@ export default function Blog() {
                 background: "#FFFFFF",
                 border: "1px solid #CCCCCC",
                 boxShadow: "0 2px 10px rgba(0, 0, 0, 0.05)",
+                padding: 16,
                 overflow: "hidden",
               }}
             >
@@ -131,7 +132,7 @@ export default function Blog() {
                   {badgeLabels[i]}
                 </span>
               </div>
-              <div style={{ padding: "24px", borderTop: "1px solid #EAEAEA" }}>
+              <div style={{ padding: "16px 0 0" }}>
                 <div
                   style={{
                     fontFamily: '"Titillium Web", sans-serif',
