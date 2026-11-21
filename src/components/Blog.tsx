@@ -56,8 +56,8 @@ export default function Blog() {
             <span
               style={{
                 position: "absolute",
-                top: 6,
-                left: 6,
+                top: 4,
+                left: 4,
                 width: "100%",
                 height: "100%",
                 border: "1px solid #CCCCCC",
@@ -75,7 +75,7 @@ export default function Blog() {
                 background: "#1E1E1E",
                 color: "#ffffff",
                 border: "1px solid #1E1E1E",
-                padding: "10px 22px",
+                padding: "10px 16px",
                 fontSize: 11,
                 fontWeight: 600,
                 textTransform: "uppercase",
