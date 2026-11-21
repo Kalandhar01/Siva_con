@@ -53,18 +53,21 @@ export const testimonials = [
       "You will never fake the feeling of being in such a place. The live minimalism base on the natural materials and alive unprocessed textures — true, authentic, close to nature. It has memory and appreciates to the culture, roots, archetypes.",
     name: "Pablo Gusterio",
     role: "Client of Company",
+    image: "/sivra/testimonial-left.jpg",
   },
   {
     quote:
       "I’m always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
     name: "Anna Paulina",
     role: "Client of Company",
+    image: "/sivra/testimonial-left-2.jpg",
   },
   {
     quote:
       "I have very much enjoyed with your services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
     name: "Kristina Lee",
     role: "Client of Company",
+    image: "/sivra/testimonial-left-3.jpg",
   },
 ];
 

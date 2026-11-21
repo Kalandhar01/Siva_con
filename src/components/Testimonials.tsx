@@ -47,9 +47,10 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 lg:grid-cols-[56%_44%] gap-8 items-start">
           {/* Left — wide landscape photo, positioned higher */}
           <div className="reveal" data-reveal>
-            <div style={{ aspectRatio: "16 / 10.5", overflow: "hidden" }}>
+            <div style={{ aspectRatio: "16 / 10.5", overflow: "hidden", opacity: fade ? 1 : 0, transition: "opacity 0.4s ease" }}>
               <Image
-                src="/sivra/testimonial-left.jpg"
+                key={t.image}
+                src={t.image}
                 alt=""
                 width={716}
                 height={466}
