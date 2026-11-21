@@ -44,7 +44,7 @@ export default function Testimonials() {
       }}
     >
       <div className="relative mx-auto px-6 md:px-[120px]" style={{ maxWidth: "none" }}>
-        <div className="grid grid-cols-1 lg:grid-cols-[56%_44%] gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[56%_44%] gap-6 md:gap-8 items-start">
           {/* Left — wide landscape photo, positioned higher */}
           <div className="reveal" data-reveal>
             <div style={{ aspectRatio: "16 / 10.5", overflow: "hidden", opacity: fade ? 1 : 0, transition: "opacity 0.4s ease" }}>
@@ -63,7 +63,7 @@ export default function Testimonials() {
           {/* Right — marble testimonial panel, shifted down */}
           <div
             data-reveal
-            className="reveal relative lg:mt-12 p-6 md:p-12 lg:p-16 min-h-[460px] md:min-h-[560px]"
+            className="reveal relative lg:mt-12 p-5 md:p-12 lg:p-16 min-h-[360px] md:min-h-[560px]"
             style={{
               background: "#F7F7F7",
               backgroundImage: "url(/sivra/marble-bg.png)",
@@ -114,9 +114,9 @@ export default function Testimonials() {
               }}
             >
               <p
+                className="text-[17px] md:text-[19px]"
                 style={{
                   fontFamily: '"Titillium Web", sans-serif',
-                  fontSize: 19,
                   color: "#7A7A7A",
                   lineHeight: 1.75,
                   margin: 0,
