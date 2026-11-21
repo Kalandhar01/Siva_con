@@ -97,9 +97,8 @@ export default function Blog() {
               data-reveal
               style={{
                 background: "#FFFFFF",
-                border: "1.5px solid #B0B0B0",
-                boxShadow: "0 2px 10px rgba(0, 0, 0, 0.05)",
-                padding: 24,
+                border: "1px solid #E0E0E0",
+                padding: 19,
                 overflow: "hidden",
               }}
             >
@@ -132,7 +131,7 @@ export default function Blog() {
                   {badgeLabels[i]}
                 </span>
               </div>
-              <div style={{ padding: "20px 0 0" }}>
+              <div style={{ padding: "12px 0 0" }}>
                 <div
                   style={{
                     fontFamily: '"Titillium Web", sans-serif',
@@ -143,7 +142,7 @@ export default function Blog() {
                     marginBottom: 14,
                   }}
                 >
-                  {p.date.toUpperCase()} &nbsp;••&nbsp; {p.author.toUpperCase()}
+                  {p.date} &nbsp;•&nbsp; {p.author} &nbsp;•&nbsp; 0 Comments
                 </div>
                 <h4
                   style={{
