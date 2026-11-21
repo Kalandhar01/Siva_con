@@ -32,7 +32,7 @@ export default function Testimonials() {
         opacity: 1,
       }}
     >
-      <div className="relative mx-auto px-6 md:px-[180px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6 md:px-[210px]" style={{ maxWidth: "none" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div />
           <div

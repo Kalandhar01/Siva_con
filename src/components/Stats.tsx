@@ -53,7 +53,7 @@ export default function Stats() {
       className="relative w-full"
       style={{ background: "#ffffff", padding: "60px 0 80px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[180px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6 md:px-[210px]" style={{ maxWidth: "none" }}>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s) => (
             <div key={s.label} className="text-center" data-reveal>
