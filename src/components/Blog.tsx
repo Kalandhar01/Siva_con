@@ -33,24 +33,21 @@ export default function Blog() {
             <div className="dot-sep mt-[22px]" />
           </div>
 
-          <div className="group relative inline-block self-end">
+          <a
+            href="#"
+            className="group relative inline-flex max-w-full items-center justify-center self-end border-0 rounded-none bg-[#222222] px-[14px] text-center text-[10px] font-semibold uppercase leading-none tracking-[0.5px] text-white! no-underline whitespace-nowrap transition-colors duration-300 hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222222] [font-family:var(--font-titillium)] cursor-pointer"
+            style={{ width: 160, height: 54 }}
+          >
+            <span>View Blogs</span>
             <span
               aria-hidden="true"
-              className="absolute top-1 left-1 z-0 h-full w-full border border-[#cccccc] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:border-[#1a1a1a]"
+              className="pointer-events-none absolute top-[8px] right-[-12px] block h-[calc(100%_+_8px)] w-[1px] scale-x-100 scale-y-100 origin-bottom bg-[#222222] transition-all duration-300 ease-out group-hover:scale-y-0"
             />
-            <a
-              href="#"
-              className="relative z-10 inline-flex items-center justify-center gap-[10px] border border-[#1e1e1e] bg-[#1e1e1e] px-5 py-[14px] font-['Titillium_Web',sans-serif] text-[11px] leading-none font-semibold tracking-[0.15em] text-white uppercase no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-white group-hover:text-[#1a1a1a]"
-            >
-              View All
-              <span
-                aria-hidden="true"
-                className="inline-block text-[13px] leading-none transition-transform duration-300 group-hover:translate-x-1.5"
-              >
-                →
-              </span>
-            </a>
-          </div>
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-[-8px] left-[8px] right-[-24px] block h-[1px] scale-x-100 scale-y-100 origin-right bg-[#222222] transition-all duration-300 ease-out group-hover:scale-x-0"
+            />
+          </a>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-[26px] md:mt-12 md:grid-cols-2 md:gap-7 lg:mt-14 lg:grid-cols-3">
