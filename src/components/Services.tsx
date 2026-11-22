@@ -88,8 +88,8 @@ export default function Services() {
                     <img
                       src={s.icon}
                       alt=""
-                      width={80}
-                      height={92}
+                      width={68}
+                      height={78}
                       style={{
                         display: "block",
                         filter: isHovered ? "brightness(0) invert(1)" : "none",
