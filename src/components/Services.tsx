@@ -32,7 +32,7 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  padding: "56px 60px",
+                  padding: "20px 60px",
                   textAlign: "center",
                   backgroundColor: "#F2F2F2",
                   backgroundImage: `url(${s.bg})`,
@@ -103,8 +103,8 @@ export default function Services() {
                       fontSize: 30,
                       fontWeight: 400,
                       color: isHovered ? "#ffffff" : "#222222",
-                      marginTop: 28,
-                      marginBottom: 18,
+                      marginTop: 18,
+                      marginBottom: 10,
                       lineHeight: 1.2,
                       textAlign: "center",
                       transition: "color 0.3s linear",
@@ -127,7 +127,7 @@ export default function Services() {
                       lineHeight: 1.6,
                       color: isHovered ? "#ffffff" : "#555555",
                       maxWidth: 340,
-                      margin: "0 auto",
+                      margin: "0 auto 8px",
                       transition: "color 0.3s linear",
                     }}
                   >
