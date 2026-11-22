@@ -40,7 +40,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [active, value]);
 
   return (
-    <span ref={ref} className="counter-value">
+    <span ref={ref} className="counter-value" style={{ color: "#1a1a1a" }}>
       {n}
       {suffix}
     </span>
