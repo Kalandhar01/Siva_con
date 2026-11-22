@@ -87,8 +87,8 @@ export default function Services() {
                     <img
                       src={s.icon}
                       alt=""
-                      width={74}
-                      height={84}
+                      width={60}
+                      height={68}
                       style={{
                         display: "block",
                         marginBottom: 17,
