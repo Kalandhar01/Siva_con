@@ -12,7 +12,7 @@ export default function Services() {
       className="relative"
       style={{ background: "#ffffff", padding: "120px 0 40px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[210px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6" style={{ maxWidth: 920, margin: "0 auto" }}>
         <div className="text-center reveal" data-reveal>
           <span className="eyebrow">[ Our Services ]</span>
           <h2 className="section-title" style={{ marginTop: 18 }}>
