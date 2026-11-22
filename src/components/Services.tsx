@@ -32,8 +32,9 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  padding: "10px 140px 8px",
-                  backgroundColor: "#f4f4f4",
+                  padding: "56px 120px",
+                  textAlign: "center",
+                  backgroundColor: "#F2F2F2",
                   backgroundImage: `url(${s.bg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center center",
@@ -83,67 +84,67 @@ export default function Services() {
                 />
 
                 <div style={{ position: "relative", zIndex: 2 }}>
-                  <div>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <img
                       src={s.icon}
                       alt=""
-                      width={74}
-                      height={84}
+                      width={96}
+                      height={109}
                       style={{
                         display: "block",
-                        marginBottom: 6,
                         filter: isHovered ? "brightness(0) invert(1)" : "none",
                         transition: "filter 0.3s linear",
                       }}
                     />
                   </div>
-                  <div style={{ marginBottom: 6 }}>
-                    <h5
+                  <h5
+                    style={{
+                      fontFamily: '"Titillium Web", sans-serif',
+                      fontSize: 30,
+                      fontWeight: 400,
+                      color: isHovered ? "#ffffff" : "#222222",
+                      marginTop: 28,
+                      marginBottom: 18,
+                      lineHeight: 1.2,
+                      textAlign: "center",
+                      transition: "color 0.3s linear",
+                    }}
+                  >
+                    <a
+                      href="#"
                       style={{
-                        fontFamily: '"Titillium Web", sans-serif',
-                        fontSize: 24,
-                        fontWeight: 400,
-                        color: isHovered ? "#ffffff" : "#1a1a1a",
-                        marginBottom: 6,
-                        lineHeight: 1.4,
-                        transition: "color 0.3s linear",
+                        color: "inherit",
+                        textDecoration: "none",
                       }}
                     >
-                      <a
-                        href="#"
-                        style={{
-                          color: "inherit",
-                          textDecoration: "none",
-                        }}
-                      >
-                        {s.title}
-                      </a>
-                    </h5>
-                  </div>
+                      {s.title}
+                    </a>
+                  </h5>
                   <p
                     style={{
                       fontFamily: '"Raleway", sans-serif',
-                      fontSize: 16,
-                      lineHeight: "30px",
+                      fontSize: 18,
+                      lineHeight: 1.65,
                       color: isHovered ? "#ffffff" : "#555555",
-                      marginBottom: 4,
+                      maxWidth: 340,
+                      margin: "0 auto",
                       transition: "color 0.3s linear",
                     }}
                   >
                     {s.text}
                   </p>
-                  <div style={{ position: "relative" }}>
+                  <div style={{ marginTop: 32, position: "relative", display: "flex", justifyContent: "center" }}>
                     <a
                       href="#"
                       style={{
                         position: "relative",
                         fontFamily: '"Titillium Web", sans-serif',
                         fontSize: 13,
-                        fontWeight: 600,
-                        color: isHovered ? "#ffffff" : "#1a1a1a",
+                        fontWeight: 500,
+                        color: isHovered ? "#ffffff" : "#111111",
                         textTransform: "uppercase",
                         zIndex: 0,
-                        letterSpacing: "0.5px",
+                        letterSpacing: "0.14em",
                         textDecoration: "none",
                         opacity: isHovered ? 0.9 : 1,
                         transition: "color 0.3s linear, opacity 0.3s linear",
@@ -154,16 +155,13 @@ export default function Services() {
                         aria-hidden="true"
                         style={{
                           position: "absolute",
-                          content: "",
-                          background: isHovered ? "#808080" : "#dddddd",
-                          bottom: -3,
-                          left: -7,
-                          width: isHovered ? "calc(100% + 14px)" : 20,
-                          height: 12,
+                          background: isHovered ? "#808080" : "#DCDCDC",
+                          bottom: -4,
+                          left: -8,
+                          width: 36,
+                          height: 18,
                           zIndex: -1,
-                          transition: isHovered
-                            ? "width 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), background 0.3s linear"
-                            : "width 0.3s linear, background 0.3s linear",
+                          transition: "background 0.3s linear",
                         }}
                       />
                       READ MORE
