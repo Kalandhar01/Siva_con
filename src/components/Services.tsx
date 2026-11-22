@@ -21,7 +21,7 @@ export default function Services() {
           <div className="dot-sep mx-auto" style={{ marginTop: 22 }} />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" style={{ marginTop: 60 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" style={{ marginTop: 60 }}>
           {services.map((s, i) => {
             const isHovered = hovered === i;
             return (
