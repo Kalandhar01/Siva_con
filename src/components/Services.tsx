@@ -32,7 +32,7 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  padding: "37px 60px",
+                  padding: "37px 80px",
                   backgroundColor: "#F2F2F2",
                   backgroundImage: `url(${s.bg})`,
                   backgroundSize: "cover",
@@ -83,7 +83,7 @@ export default function Services() {
                 />
 
                 <div style={{ position: "relative", zIndex: 2 }}>
-                  <div>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <img
                       src={s.icon}
                       alt=""
@@ -105,6 +105,7 @@ export default function Services() {
                       marginTop: 18,
                       marginBottom: 10,
                       lineHeight: 1.2,
+                      textAlign: "center",
                       transition: "color 0.3s linear",
                     }}
                   >
@@ -125,13 +126,14 @@ export default function Services() {
                       lineHeight: 1.6,
                       color: isHovered ? "#ffffff" : "#555555",
                       maxWidth: 340,
-                      margin: "0 0 8px",
+                      margin: "0 auto 8px",
+                      textAlign: "center",
                       transition: "color 0.3s linear",
                     }}
                   >
                     {s.text}
                   </p>
-                  <div style={{ position: "relative" }}>
+                  <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
                     <a
                       href="#"
                       style={{
