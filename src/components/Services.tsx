@@ -32,7 +32,7 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  padding: "37px 60px",
+                  padding: "45px 60px",
                   backgroundColor: "#f4f4f4",
                   backgroundImage: `url(${s.bg})`,
                   backgroundSize: "cover",
