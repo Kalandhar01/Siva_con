@@ -72,7 +72,12 @@ export default function Services() {
                     alt=""
                     width={74}
                     height={84}
-                    style={{ display: "block", marginBottom: 17 }}
+                    style={{
+                      display: "block",
+                      marginBottom: 17,
+                      filter: isHovered ? "brightness(0) invert(1)" : "none",
+                      transition: "filter 0.3s linear",
+                    }}
                   />
                 </div>
                 <div style={{ marginBottom: 15 }}>
