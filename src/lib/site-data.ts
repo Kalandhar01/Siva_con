@@ -11,12 +11,12 @@ export const projects = [
 ];
 
 export const services = [
-  { title: "Design & Planning", text: "We will help you to get the result you dreamed of.", bg: "/sivra/card-bg-1.jpg", hover: "/sivra/card-bg-1-hover.jpg" },
-  { title: "Custom Solutions", text: "Individual, aesthetically stunning solutions for customers.", bg: "/sivra/card-bg-2.jpg", hover: "/sivra/card-bg-2-hover.jpg" },
-  { title: "Furniture & Decor", text: "We create and produce our product design lines.", bg: "/sivra/card-bg-3.jpg", hover: "/sivra/card-bg-3-hover.jpg" },
-  { title: "Exterior Design", text: "We will help you to get the result you dreamed of.", bg: "/sivra/card-bg-4.jpg", hover: "/sivra/card-bg-4-hover.jpg" },
-  { title: "Creating a Concept", text: "Individual, aesthetically stunning solutions for customers.", bg: "/sivra/card-bg-5.jpg", hover: "/sivra/card-bg-5-hover.jpg" },
-  { title: "Author's Control", text: "We create and produce our product design lines.", bg: "/sivra/card-bg-6.jpg", hover: "/sivra/card-bg-6-hover.jpg" },
+  { title: "Design & Planning", text: "We will help you to get the result you dreamed of.", bg: "/sivra/card-bg-1.jpg", hover: "/sivra/card-bg-1-hover.jpg", icon: "/sivra/service-icon-1.png" },
+  { title: "Custom Solutions", text: "Individual, aesthetically stunning solutions for customers.", bg: "/sivra/card-bg-2.jpg", hover: "/sivra/card-bg-2-hover.jpg", icon: "/sivra/service-icon-2.png" },
+  { title: "Furniture & Decor", text: "We create and produce our product design lines.", bg: "/sivra/card-bg-3.jpg", hover: "/sivra/card-bg-3-hover.jpg", icon: "/sivra/service-icon-3.png" },
+  { title: "Exterior Design", text: "We will help you to get the result you dreamed of.", bg: "/sivra/card-bg-4.jpg", hover: "/sivra/card-bg-4-hover.jpg", icon: "/sivra/service-icon-4.png" },
+  { title: "Creating a Concept", text: "Individual, aesthetically stunning solutions for customers.", bg: "/sivra/card-bg-5.jpg", hover: "/sivra/card-bg-5-hover.jpg", icon: "/sivra/service-icon-5.png" },
+  { title: "Author's Control", text: "We create and produce our product design lines.", bg: "/sivra/card-bg-6.jpg", hover: "/sivra/card-bg-6-hover.jpg", icon: "/sivra/service-icon-6.png" },
 ];
 
 export const stats = [
