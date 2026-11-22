@@ -8,7 +8,7 @@ export default function About() {
           {/* Image (bleeds left) */}
           <div className="relative" style={{ minHeight: 611 }}>
             <Image
-              src="/sivra/about-collage.png"
+              src="/sivra/about-ref.png"
               alt=""
               width={716}
               height={611}
@@ -23,8 +23,21 @@ export default function About() {
             className="reveal px-6 lg:px-0 flex flex-col justify-center pt-11 md:pt-20"
             style={{ paddingRight: 10, paddingBottom: 80, paddingLeft: 0 }}
           >
-            <span className="eyebrow text-[10px]! md:text-[11px]!">[ Main Principes ]</span>
-            <h2 className="section-title text-[26px]! md:text-[40px]!" style={{ marginTop: 18 }}>
+            <span
+              style={{
+                fontFamily: "var(--font-titillium)",
+                fontSize: 11,
+                fontWeight: 600,
+                textTransform: "none",
+                letterSpacing: "2.5px",
+                color: "#888888",
+                display: "block",
+                marginBottom: 18,
+              }}
+            >
+              [ main principes ]
+            </span>
+            <h2 className="section-title text-[26px]! md:text-[40px]!" style={{ marginTop: 0 }}>
               A Sketch of Each Detail
             </h2>
             <div className="dot-sep" style={{ marginTop: 22 }} />
