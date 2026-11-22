@@ -4,7 +4,7 @@ import { projects } from "@/lib/site-data";
 
 export default function Portfolio() {
   return (
-    <div className="relative w-full overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
+    <div className="frame-inset relative w-full overflow-x-auto pb-2" style={{ scrollbarWidth: "none", paddingRight: 60 }}>
       <div
         className="flex"
         style={{ gap: 0, minWidth: "max-content" }}
