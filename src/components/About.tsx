@@ -47,13 +47,7 @@ export default function About() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10" style={{ marginTop: 40 }}>
               <div>
-                <div style={{ width: 46, height: 46, marginBottom: 18 }}>
-                  <svg viewBox="0 0 46 46" fill="none" width="46" height="46">
-                    <rect x="3" y="3" width="40" height="40" stroke="#1a1a1a" strokeWidth="1.2" />
-                    <path d="M3 23h40M23 3v40" stroke="#1a1a1a" strokeWidth="1.2" />
-                    <circle cx="23" cy="23" r="8" stroke="#1a1a1a" strokeWidth="1.2" fill="none" />
-                  </svg>
-                </div>
+                <span className="ot-flaticon-3d" style={{ display: "block", marginBottom: 28 }} />
                 <h4 style={{ fontFamily: "var(--font-titillium)", fontSize: 20, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
                   3D Visualization
                 </h4>
@@ -61,12 +55,7 @@ export default function About() {
                 <a href="#" className="link-more" style={{ marginTop: 16 }}>Read More</a>
               </div>
               <div>
-                <div style={{ width: 46, height: 46, marginBottom: 18 }}>
-                  <svg viewBox="0 0 46 46" fill="none" width="46" height="46">
-                    <rect x="3" y="8" width="40" height="30" stroke="#1a1a1a" strokeWidth="1.2" />
-                    <path d="M3 18h40M13 8v30M33 8v30" stroke="#1a1a1a" strokeWidth="1.2" />
-                  </svg>
-                </div>
+                <span className="ot-flaticon-blueprint" style={{ display: "block", marginBottom: 28 }} />
                 <h4 style={{ fontFamily: "var(--font-titillium)", fontSize: 20, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
                   Individual Project
                 </h4>
