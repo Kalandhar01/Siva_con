@@ -123,8 +123,8 @@ export default function Services() {
                   <p
                     style={{
                       fontFamily: '"Raleway", sans-serif',
-                      fontSize: 18,
-                      lineHeight: 1.65,
+                      fontSize: 16,
+                      lineHeight: 1.6,
                       color: isHovered ? "#ffffff" : "#555555",
                       maxWidth: 340,
                       margin: "0 auto",
