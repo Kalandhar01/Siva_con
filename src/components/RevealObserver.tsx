@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export function RevealObserver() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const els = () => Array.from(document.querySelectorAll("[data-reveal]"));
+    const els = () => Array.from(document.querySelectorAll("[data-reveal], [data-img-reveal]"));
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -17,7 +17,11 @@ export function RevealObserver() {
       },
       { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
     );
-    els().forEach((el) => obs.observe(el));
+    els().forEach((el) => {
+      if (el.hasAttribute("data-img-reveal")) el.classList.add("img-reveal");
+      else el.classList.add("reveal");
+      obs.observe(el);
+    });
     return () => obs.disconnect();
   }, []);
   return null;

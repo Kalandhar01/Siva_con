@@ -12,7 +12,7 @@ const slides = [
 
 const S = 1440 / 1660;
 const SIDEBAR_W = Math.round(87 * S);
-const TEXT_X = 191;
+const TEXT_X = 215;
 const IMG_X = 850;
 const IMG_W = 760;
 const IMG_H = 752;
@@ -20,6 +20,7 @@ const IMG_H = 752;
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [buttonVisible, setButtonVisible] = useState(true);
 
   useEffect(() => {
     if (paused) return;
@@ -27,7 +28,13 @@ export default function Hero() {
     return () => clearInterval(t);
   }, [paused]);
 
-  const go = (d: number) => setIndex((i) => (i + d + slides.length) % slides.length);
+  const go = (d: number) => {
+    setButtonVisible(false);
+    setTimeout(() => {
+      setIndex((i) => (i + d + slides.length) % slides.length);
+      setButtonVisible(true);
+    }, 220);
+  };
 
   return (
     <section
@@ -89,27 +96,7 @@ export default function Hero() {
               why, from the first day of the activity of the studio.
             </p>
             <div style={{ marginTop: 20 }}>
-              <a
-                href="#portfolio"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "#1E1E1E",
-                  color: "#ffffff",
-                  border: "none",
-                  borderRadius: 0,
-                  padding: "12px 20px",
-                  fontSize: 10,
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.15em",
-                  fontFamily: "var(--font-titillium)",
-                  textDecoration: "none",
-                }}
-              >
-                View Projects
-              </a>
+              <Button href="#portfolio">View Projects</Button>
             </div>
           </div>
           {/* Slider indicator */}
@@ -156,7 +143,7 @@ export default function Hero() {
             className="absolute z-20"
             style={{
               left: TEXT_X,
-              top: 92 + 70,
+              top: 92 + 90,
               width: "min(950px, calc(100vw - 928px))",
             }}
           >
@@ -165,15 +152,15 @@ export default function Hero() {
                 {/* Circular badge stamp - top right of headline */}
                 <div
                   className="circle-text absolute"
-                  style={{ right: -70, top: -65, width: 120, height: 120, zIndex: 5 }}
+                  style={{ right: -20, top: -75, width: 175, height: 175, zIndex: 20 }}
                 >
-                  <svg viewBox="0 0 120 120" width="120" height="120">
+                  <svg viewBox="0 0 175 175" width="175" height="175">
                     <defs>
-                      <path id="circ2" d="M 60,60 m -48,0 a 48,48 0 1,1 96,0 a 48,48 0 1,1 -96,0" />
+                      <path id="circ2" d="M 17.5,87.5 A 70,70 0 1 1 137,137" />
                     </defs>
-                    <text style={{ fontFamily: "var(--font-titillium)", fontSize: 10, fontWeight: 500, letterSpacing: "2px", fill: "#B8B8B8" }}>
+                    <text style={{ fontFamily: "var(--font-titillium)", fontSize: 13, fontWeight: 400, letterSpacing: "2px", fill: "#A6A6A6" }}>
                       <textPath href="#circ2" startOffset="0">
-                        theratio interior studio  •  since 2012  •  theratio interior studio  •
+                        theratio interior studio     since 2012
                       </textPath>
                     </text>
                   </svg>
@@ -190,6 +177,7 @@ export default function Hero() {
                     letterSpacing: 0,
                     margin: 0,
                     position: "relative",
+                    zIndex: 2,
                   }}
                 >
                   {slides[index].title[0]}
@@ -212,7 +200,7 @@ export default function Hero() {
                 <br />
                 why, from the first day of the activity of the studio.
               </p>
-              <div className="hero-stagger-3" style={{ marginTop: 44, marginLeft: 45, paddingBottom: 24 }}>
+              <div style={{ marginTop: 44, marginLeft: 0, paddingBottom: 24, opacity: buttonVisible ? 1 : 0, transition: "opacity 0.22s ease" }}>
                 <Button href="#portfolio">View Projects</Button>
               </div>
             </div>
@@ -226,8 +214,8 @@ export default function Hero() {
             style={{
               right: 0,
               top: 0,
-              width: 740,
-              height: 790,
+              width: 840,
+              height: 750,
               overflow: "hidden",
             }}
           >

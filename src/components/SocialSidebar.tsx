@@ -15,12 +15,11 @@ export default function SocialSidebar() {
         style={{
           width: 90,
           background: "#FFFFFF",
-          borderRight: "1px solid #e6e6e6",
         }}
       >
         <div
           className="flex flex-col items-center justify-center"
-          style={{ height: "calc(100% - 105px)", gap: 40 }}
+          style={{ height: "calc(100% - 165px)", marginTop: 60, gap: 40 }}
         >
           {items.map((item) => (
             <a
