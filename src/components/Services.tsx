@@ -12,7 +12,7 @@ export default function Services() {
       className="relative"
       style={{ background: "#ffffff", padding: "120px 0 40px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[210px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6 md:px-[120px]" style={{ maxWidth: "none" }}>
         <div className="text-center" data-reveal>
           <span className="eyebrow reveal">[ Our Services ]</span>
           <h2 className="section-title reveal" style={{ marginTop: 18 }}>
@@ -21,7 +21,7 @@ export default function Services() {
           <div className="dot-sep mx-auto" style={{ marginTop: 22 }} />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" style={{ marginTop: 60 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 px-4 md:px-16 lg:px-24" style={{ marginTop: 60 }}>
           {services.map((s, i) => {
             const isHovered = hovered === i;
             return (
