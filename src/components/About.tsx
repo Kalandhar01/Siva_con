@@ -46,21 +46,51 @@ export default function About() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10" style={{ marginTop: 40 }}>
-              <div>
-                <span className="ot-flaticon-3d" style={{ display: "block", marginBottom: 28 }} />
-                <h4 style={{ fontFamily: "var(--font-titillium)", fontSize: 20, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
-                  3D Visualization
-                </h4>
-                <p style={{ fontSize: 14, lineHeight: "24px" }}>3D sketch of each detail of your future interior.</p>
-                <a href="#" className="link-more" style={{ marginTop: 16 }}>Read More</a>
+              <div style={{ padding: "0 30px 0 0" }}>
+                <span className="ot-flaticon-3d" />
+                <h5
+                  style={{
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 20,
+                    fontWeight: 400,
+                    color: "#1a1a1a",
+                    marginBottom: 10,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
+                    3D Visualization
+                  </a>
+                </h5>
+                <p style={{ fontSize: 14, lineHeight: "24px", marginBottom: 13 }}>
+                  3D sketch of each detail of your future interior.
+                </p>
+                <a href="#" className="btn-details" aria-label="read more">
+                  READ MORE
+                </a>
               </div>
-              <div>
-                <span className="ot-flaticon-blueprint" style={{ display: "block", marginBottom: 28 }} />
-                <h4 style={{ fontFamily: "var(--font-titillium)", fontSize: 20, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
-                  Individual Project
-                </h4>
-                <p style={{ fontSize: 14, lineHeight: "24px" }}>The basic philosophy of studio is to create individual design.</p>
-                <a href="#" className="link-more" style={{ marginTop: 16 }}>Read More</a>
+              <div style={{ padding: "0 30px 0 0" }}>
+                <span className="ot-flaticon-blueprint" />
+                <h5
+                  style={{
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 20,
+                    fontWeight: 400,
+                    color: "#1a1a1a",
+                    marginBottom: 10,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
+                    Individual Project
+                  </a>
+                </h5>
+                <p style={{ fontSize: 14, lineHeight: "24px", marginBottom: 13 }}>
+                  The basic philosophy of studio is to create individual design.
+                </p>
+                <a href="#" className="btn-details" aria-label="read more">
+                  READ MORE
+                </a>
               </div>
             </div>
           </div>
