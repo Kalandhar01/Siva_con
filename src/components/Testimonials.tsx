@@ -71,40 +71,81 @@ export default function Testimonials() {
               backgroundPosition: "center",
             }}
           >
-            <span
-              style={{
-                fontFamily: '"Titillium Web", sans-serif',
-                fontSize: 12,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.15em",
-                color: "#888888",
-                display: "block",
-                marginBottom: 14,
-              }}
-            >
-              [ TESTIMONIALS ]
-            </span>
-            <h2
-              style={{
-                fontFamily: '"Titillium Web", sans-serif',
-                fontSize: 44,
-                fontWeight: 400,
-                color: "#1A1A1A",
-                lineHeight: 1.2,
-                marginBottom: 18,
-              }}
-            >
-              What People Say
-            </h2>
-            <div
-              style={{
-                width: 44,
-                height: 1,
-                borderTop: "1px dashed #999999",
-                marginBottom: 28,
-              }}
-            />
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4" style={{ marginBottom: 18 }}>
+              <div>
+                <span
+                  style={{
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 12,
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    color: "#888888",
+                    display: "block",
+                    marginBottom: 14,
+                  }}
+                >
+                  [ TESTIMONIALS ]
+                </span>
+                <h2
+                  style={{
+                    fontFamily: '"Titillium Web", sans-serif',
+                    fontSize: 44,
+                    fontWeight: 400,
+                    color: "#1A1A1A",
+                    lineHeight: 1.2,
+                    margin: 0,
+                  }}
+                >
+                  What People Say
+                </h2>
+                <div
+                  style={{
+                    width: 44,
+                    height: 1,
+                    borderTop: "1px dashed #999999",
+                    marginTop: 18,
+                    marginBottom: 0,
+                  }}
+                />
+              </div>
+              <div style={{ position: "relative", display: "inline-block", alignSelf: "flex-end" }}>
+                <span
+                  style={{
+                    position: "absolute",
+                    top: 4,
+                    left: 4,
+                    width: "100%",
+                    height: "100%",
+                    border: "1px solid #CCCCCC",
+                    zIndex: 0,
+                  }}
+                />
+                <a
+                  href="#"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#1E1E1E",
+                    color: "#ffffff",
+                    border: "1px solid #1E1E1E",
+                    padding: "10px 16px",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    fontFamily: '"Titillium Web", sans-serif',
+                    textDecoration: "none",
+                  }}
+                >
+                  VIEW ALL
+                </a>
+              </div>
+            </div>
+            <div style={{ marginBottom: 28 }} />
 
             <div
               style={{
