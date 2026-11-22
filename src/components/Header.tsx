@@ -264,7 +264,7 @@ export default function Header() {
             </button>
             <div
               className="flex items-center"
-              style={{ borderLeft: "1px solid rgba(0,0,0,0.1)", paddingLeft: 20, paddingRight: 20, alignSelf: "center" }}
+              style={{ borderLeft: "1px solid rgba(0,0,0,0.1)", paddingLeft: 32, paddingRight: 20, alignSelf: "center" }}
             >
               <button
                 type="button"
