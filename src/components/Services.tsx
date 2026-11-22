@@ -9,10 +9,9 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative"
-      style={{ background: "#ffffff", padding: "120px 0 40px" }}
+      className="relative bg-white py-[120px] pb-[40px]"
     >
-      <div className="relative mx-auto" style={{ maxWidth: 1260, padding: "0 30px" }}>
+      <div className="relative mx-auto max-w-[1260px] px-[30px]">
         <div className="text-center reveal" data-reveal>
           <span className="eyebrow">[ Our Services ]</span>
           <h2 className="section-title" style={{ marginTop: 18 }}>
@@ -21,7 +20,7 @@ export default function Services() {
           <div className="dot-sep mx-auto" style={{ marginTop: 22 }} />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]" style={{ marginTop: 60 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-[60px]">
           {services.map((s, i) => {
             const isHovered = hovered === i;
             return (
@@ -33,7 +32,7 @@ export default function Services() {
                 onMouseLeave={() => setHovered(null)}
                 style={{
                   padding: "45px 60px",
-                  backgroundColor: "#f4f4f4",
+                  backgroundColor: isHovered ? "#1a1a1a" : "#f4f4f4",
                   backgroundImage: `url(${s.bg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center center",
@@ -91,7 +90,6 @@ export default function Services() {
                       height={68}
                       style={{
                         display: "block",
-                        marginBottom: 17,
                         filter: isHovered ? "brightness(0) invert(1)" : "none",
                         transition: "filter 0.3s linear",
                       }}
@@ -157,7 +155,7 @@ export default function Services() {
                           background: isHovered ? "#808080" : "#dddddd",
                           bottom: -3,
                           left: -7,
-                          width: isHovered ? "calc(100% + 14px)" : 20,
+                          width: 20,
                           height: 12,
                           zIndex: -1,
                           transition: isHovered
