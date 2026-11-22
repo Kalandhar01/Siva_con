@@ -56,8 +56,8 @@ export default function Stats() {
       <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s) => (
-            <div key={s.label} className="text-center" data-reveal>
-              <div className="reveal flex items-center justify-center gap-2">
+            <div key={s.label} className="text-center reveal" data-reveal>
+              <div className="reveal flex items-center justify-center gap-2" data-reveal>
                 <span className="counter-bracket">[</span>
                 <Counter value={s.value} suffix="" />
                 <span className="counter-bracket">+]</span>
