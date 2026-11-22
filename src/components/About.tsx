@@ -20,15 +20,15 @@ export default function About() {
           {/* Content */}
           <div
             data-reveal
-            className="reveal px-6 lg:px-0 flex flex-col justify-center"
-            style={{ padding: "80px 10px 80px 0px" }}
+            className="reveal px-6 lg:px-0 flex flex-col justify-center pt-11 md:pt-20"
+            style={{ paddingRight: 10, paddingBottom: 80, paddingLeft: 0 }}
           >
-            <span className="eyebrow">[ Main Principes ]</span>
-            <h2 className="section-title" style={{ marginTop: 18, fontSize: 40 }}>
+            <span className="eyebrow text-[10px]! md:text-[11px]!">[ Main Principes ]</span>
+            <h2 className="section-title text-[26px]! md:text-[40px]!" style={{ marginTop: 18 }}>
               A Sketch of Each Detail
             </h2>
             <div className="dot-sep" style={{ marginTop: 22 }} />
-            <p style={{ marginTop: 26, maxWidth: 460 }}>
+            <p style={{ marginTop: 26, maxWidth: 460, fontSize: 15, lineHeight: 1.6 }}>
               The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles.
             </p>
 

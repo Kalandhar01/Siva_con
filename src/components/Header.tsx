@@ -17,8 +17,114 @@ export default function Header() {
 
   return (
     <>
+      {/* Mobile header bar (<=768px) */}
       <header
-        className="w-full sticky top-0 z-[100] h-[64px] md:h-[92px] box-border"
+        className="md:hidden sticky top-0 z-[100] h-[64px] box-border flex items-center"
+        style={{ background: "#232323" }}
+      >
+        {/* White square emblem tile */}
+        <div
+          className="flex items-center justify-center shrink-0 w-[64px] h-[64px]"
+          style={{ background: "#FFFFFF" }}
+        >
+          <img
+            src="/sivra/brand-logo.png"
+            alt="SIVRA Buildcon"
+            className="h-[36px] w-auto object-contain"
+            style={{ filter: "brightness(0)" }}
+          />
+        </div>
+        {/* Stacked brand label */}
+        <div
+          className="flex flex-col justify-center"
+          style={{ marginLeft: 12, lineHeight: 1.2 }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-titillium)",
+              fontSize: 11,
+              fontWeight: 500,
+              color: "#D8D8D8",
+              textTransform: "uppercase",
+              letterSpacing: "1.5px",
+              lineHeight: 1.2,
+            }}
+          >
+            SIVRA
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-titillium)",
+              fontSize: 11,
+              fontWeight: 500,
+              color: "#D8D8D8",
+              textTransform: "uppercase",
+              letterSpacing: "1.5px",
+              lineHeight: 1.2,
+            }}
+          >
+            BUILDCON
+          </span>
+        </div>
+
+        <div className="flex-1" />
+
+        {/* Right icons */}
+        <div className="flex items-center" style={{ gap: 18, paddingRight: 16 }}>
+          <a
+            href="#contact"
+            aria-label="Cart"
+            className="relative flex items-center"
+            style={{ color: "#FFFFFF" }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />
+            </svg>
+            <span
+              className="absolute flex items-center justify-center rounded-full"
+              style={{
+                width: 16,
+                height: 16,
+                background: "#FFFFFF",
+                color: "#1A1A1A",
+                fontSize: 10,
+                fontWeight: 600,
+                bottom: -4,
+                left: -4,
+              }}
+            >
+              0
+            </span>
+          </a>
+          <button
+            type="button"
+            onClick={() => setSearch(true)}
+            aria-label="Search"
+            className="flex items-center"
+            style={{ color: "#FFFFFF" }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            className="flex flex-col"
+            style={{ gap: 5, color: "#FFFFFF" }}
+          >
+            <span style={{ height: 2, width: 20, background: "#FFFFFF" }} />
+            <span style={{ height: 2, width: 20, background: "#FFFFFF" }} />
+            <span style={{ height: 2, width: 20, background: "#FFFFFF" }} />
+          </button>
+        </div>
+      </header>
+
+      {/* Desktop header */}
+      <header
+        className="hidden md:flex w-full sticky top-0 z-[100] h-[92px] box-border"
         style={{
           background: "#FFFFFF",
           borderBottom: "1px solid #EAEAEA",
