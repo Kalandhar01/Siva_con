@@ -27,13 +27,13 @@ export default function Services() {
             return (
               <div
                 key={s.title}
-                className="group relative overflow-visible transition-all duration-300 ease-linear"
+                className="group relative overflow-hidden transition-all duration-300 ease-linear"
                 data-reveal
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
                   padding: "37px 60px",
-                  backgroundColor: isHovered ? "#1a1a1a" : "#f4f4f4",
+                  backgroundColor: "#F2F2F2",
                   backgroundImage: `url(${s.bg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center center",
@@ -41,6 +41,19 @@ export default function Services() {
                   transition: "background-color 0.3s linear",
                 }}
               >
+                {/* black overlay that fades in on hover */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "#1a1a1a",
+                    opacity: isHovered ? 1 : 0,
+                    transition: "opacity 0.3s linear",
+                    zIndex: 0,
+                    pointerEvents: "none",
+                  }}
+                />
                 {/* line-hover pseudo via spans */}
                 <span
                   aria-hidden="true"
@@ -52,6 +65,7 @@ export default function Services() {
                     width: isHovered ? "calc(100% + 5px)" : 0,
                     height: 1,
                     transition: "width 0.3s linear",
+                    zIndex: 1,
                   }}
                 />
                 <span
@@ -64,31 +78,33 @@ export default function Services() {
                     width: 1,
                     height: isHovered ? "calc(100% + 5px)" : 0,
                     transition: "height 0.3s linear",
+                    zIndex: 1,
                   }}
                 />
-                <div>
-                  <img
-                    src={s.icon}
-                    alt=""
-                    width={74}
-                    height={84}
-                    style={{
-                      display: "block",
-                      marginBottom: 17,
-                      filter: isHovered ? "brightness(0) invert(1)" : "none",
-                      transition: "filter 0.3s linear",
-                    }}
-                  />
-                </div>
-                <div style={{ marginBottom: 15 }}>
+
+                <div style={{ position: "relative", zIndex: 2 }}>
+                  <div>
+                    <img
+                      src={s.icon}
+                      alt=""
+                      width={68}
+                      height={78}
+                      style={{
+                        display: "block",
+                        filter: isHovered ? "brightness(0) invert(1)" : "none",
+                        transition: "filter 0.3s linear",
+                      }}
+                    />
+                  </div>
                   <h5
                     style={{
                       fontFamily: '"Titillium Web", sans-serif',
-                      fontSize: 24,
+                      fontSize: 30,
                       fontWeight: 400,
-                      color: isHovered ? "#ffffff" : "#1a1a1a",
-                      marginBottom: 15,
-                      lineHeight: 1.4,
+                      color: isHovered ? "#ffffff" : "#222222",
+                      marginTop: 18,
+                      marginBottom: 10,
+                      lineHeight: 1.2,
                       transition: "color 0.3s linear",
                     }}
                   >
@@ -102,54 +118,53 @@ export default function Services() {
                       {s.title}
                     </a>
                   </h5>
-                </div>
-                <p
-                  style={{
-                    fontFamily: '"Raleway", sans-serif',
-                    fontSize: 16,
-                    lineHeight: "30px",
-                    color: isHovered ? "#a3a3a3" : "#555555",
-                    marginBottom: 13,
-                    transition: "color 0.3s linear",
-                  }}
-                >
-                  {s.text}
-                </p>
-                <div style={{ position: "relative" }}>
-                  <a
-                    href="#"
+                  <p
                     style={{
-                      position: "relative",
-                      fontFamily: '"Titillium Web", sans-serif',
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: isHovered ? "#ffffff" : "#1a1a1a",
-                      textTransform: "uppercase",
-                      zIndex: 0,
-                      letterSpacing: "0.5px",
-                      textDecoration: "none",
-                      opacity: isHovered ? 0.9 : 1,
-                      transition: "color 0.3s linear, opacity 0.3s linear",
-                      display: "inline-block",
+                      fontFamily: '"Raleway", sans-serif',
+                      fontSize: 16,
+                      lineHeight: 1.6,
+                      color: isHovered ? "#ffffff" : "#555555",
+                      maxWidth: 340,
+                      margin: "0 0 8px",
+                      transition: "color 0.3s linear",
                     }}
                   >
-                    <span
-                      aria-hidden="true"
+                    {s.text}
+                  </p>
+                  <div style={{ position: "relative" }}>
+                    <a
+                      href="#"
                       style={{
-                        position: "absolute",
-                        background: isHovered ? "#808080" : "#dddddd",
-                        bottom: -3,
-                        left: -7,
-                        width: isHovered ? "calc(100% + 14px)" : 20,
-                        height: 12,
-                        zIndex: -1,
-                        transition: isHovered
-                          ? "width 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), background 0.3s linear"
-                          : "width 0.3s linear, background 0.3s linear",
+                        position: "relative",
+                        fontFamily: '"Titillium Web", sans-serif',
+                        fontSize: 13,
+                        fontWeight: 500,
+                        color: isHovered ? "#ffffff" : "#111111",
+                        textTransform: "uppercase",
+                        zIndex: 0,
+                        letterSpacing: "0.14em",
+                        textDecoration: "none",
+                        opacity: isHovered ? 0.9 : 1,
+                        transition: "color 0.3s linear, opacity 0.3s linear",
+                        display: "inline-block",
                       }}
-                    />
-                    READ MORE
-                  </a>
+                    >
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          background: isHovered ? "#808080" : "#DCDCDC",
+                          bottom: -4,
+                          left: -8,
+                          width: 36,
+                          height: 18,
+                          zIndex: -1,
+                          transition: "background 0.3s linear",
+                        }}
+                      />
+                      READ MORE
+                    </a>
+                  </div>
                 </div>
               </div>
             );
