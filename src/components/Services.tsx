@@ -155,6 +155,8 @@ export default function Services() {
             );
           })}
         </div>
+
+        <div className="dot-sep mx-auto" style={{ marginTop: 60 }} />
       </div>
     </section>
   );
