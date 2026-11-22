@@ -32,7 +32,7 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  padding: "20px 140px",
+                  padding: "14px 140px",
                   textAlign: "center",
                   backgroundColor: isHovered ? "#1a1a1a" : "#f4f4f4",
                   backgroundImage: `url(${s.bg})`,
@@ -75,7 +75,7 @@ export default function Services() {
                     height={84}
                     style={{
                       display: "block",
-                      marginBottom: 17,
+                      marginBottom: 10,
                       filter: isHovered ? "brightness(0) invert(1)" : "none",
                       transition: "filter 0.3s linear",
                     }}
@@ -88,7 +88,7 @@ export default function Services() {
                       fontSize: 24,
                       fontWeight: 400,
                       color: isHovered ? "#ffffff" : "#1a1a1a",
-                      marginBottom: 15,
+                      marginBottom: 10,
                       lineHeight: 1.4,
                       textAlign: "center",
                       transition: "color 0.3s linear",
@@ -111,7 +111,7 @@ export default function Services() {
                     fontSize: 16,
                     lineHeight: "30px",
                     color: isHovered ? "#a3a3a3" : "#555555",
-                    marginBottom: 13,
+                    marginBottom: 8,
                     textAlign: "center",
                     transition: "color 0.3s linear",
                   }}
