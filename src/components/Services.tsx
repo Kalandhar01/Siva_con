@@ -12,10 +12,10 @@ export default function Services() {
       className="relative"
       style={{ background: "#ffffff", padding: "120px 0 40px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[120px]" style={{ maxWidth: "none" }}>
-        <div className="text-center" data-reveal>
-          <span className="eyebrow reveal">[ Our Services ]</span>
-          <h2 className="section-title reveal" style={{ marginTop: 18 }}>
+      <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
+        <div className="text-center reveal" data-reveal>
+          <span className="eyebrow">[ Our Services ]</span>
+          <h2 className="section-title" style={{ marginTop: 18 }}>
             What Can We Offer
           </h2>
           <div className="dot-sep mx-auto" style={{ marginTop: 22 }} />
