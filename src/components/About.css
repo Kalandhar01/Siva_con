@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("/sivra/Flaticon.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ot-flaticon-3d::before { content: "\\f10e"; }
+.ot-flaticon-blueprint::before { content: "\\f119"; }
+
+[class^="ot-flaticon-"]::before,
+[class*=" ot-flaticon-"]::before {
+  font-family: Flaticon;
+  font-size: 54px;
+  font-style: normal;
+  display: block;
+  line-height: 1;
+  margin-bottom: 28px;
+  color: #1a1a1a;
+}
