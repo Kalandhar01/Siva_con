@@ -72,9 +72,9 @@ export const testimonials = [
 ];
 
 export const posts = [
-  { title: "Top 10 Tips for Your Kitchen Interior Design", category: "Interior", date: "March 20, 2020", author: "Tom Black", image: "/sivra/blog-1.jpg" },
-  { title: "The Golden Ratio Rule for Best 2D Sketch", category: "Architecture", date: "March 20, 2020", author: "Tom Black", image: "/sivra/blog-2.jpg" },
-  { title: "Use Pastel Colors & Natural Materials", category: "Interior", date: "March 19, 2020", author: "Tom Black", image: "/sivra/blog-3.jpg" },
+  { title: "Top 10 Tips for Your Kitchen Interior Design", category: "Interior", date: "March 20, 2020", author: "Tom Black", image: "/sivra/blog-2.jpg" },
+  { title: "The Golden Ratio Rule for Best 2D Sketch", category: "Architecture", date: "March 20, 2020", author: "Tom Black", image: "/sivra/blog-3.jpg" },
+  { title: "Use Pastel Colors & Natural Materials", category: "Interior", date: "March 20, 2020", author: "Tom Black", image: "/sivra/blog-1.jpg" },
 ];
 
 export const partners = [1, 2, 3, 4, 5, 6];
