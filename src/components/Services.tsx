@@ -12,7 +12,7 @@ export default function Services() {
       className="relative"
       style={{ background: "#ffffff", padding: "120px 0 40px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[230px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto" style={{ maxWidth: 1260, padding: "0 30px" }}>
         <div className="text-center reveal" data-reveal>
           <span className="eyebrow">[ Our Services ]</span>
           <h2 className="section-title" style={{ marginTop: 18 }}>
@@ -21,7 +21,7 @@ export default function Services() {
           <div className="dot-sep mx-auto" style={{ marginTop: 22 }} />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" style={{ marginTop: 60 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]" style={{ marginTop: 60 }}>
           {services.map((s, i) => {
             const isHovered = hovered === i;
             return (
@@ -32,8 +32,8 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
-                  padding: "37px 120px",
-                  backgroundColor: "#F2F2F2",
+                  padding: "37px 60px",
+                  backgroundColor: "#f4f4f4",
                   backgroundImage: `url(${s.bg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center center",
@@ -87,10 +87,11 @@ export default function Services() {
                     <img
                       src={s.icon}
                       alt=""
-                      width={68}
-                      height={78}
+                      width={74}
+                      height={84}
                       style={{
                         display: "block",
+                        marginBottom: 17,
                         filter: isHovered ? "brightness(0) invert(1)" : "none",
                         transition: "filter 0.3s linear",
                       }}
@@ -99,12 +100,11 @@ export default function Services() {
                   <h5
                     style={{
                       fontFamily: '"Titillium Web", sans-serif',
-                      fontSize: 30,
+                      fontSize: 24,
                       fontWeight: 400,
-                      color: isHovered ? "#ffffff" : "#222222",
-                      marginTop: 18,
-                      marginBottom: 10,
-                      lineHeight: 1.2,
+                      color: isHovered ? "#ffffff" : "#1a1a1a",
+                      marginBottom: 15,
+                      lineHeight: 1.4,
                       textAlign: "center",
                       transition: "color 0.3s linear",
                     }}
@@ -123,10 +123,9 @@ export default function Services() {
                     style={{
                       fontFamily: '"Raleway", sans-serif',
                       fontSize: 16,
-                      lineHeight: 1.6,
-                      color: isHovered ? "#ffffff" : "#555555",
-                      maxWidth: 340,
-                      margin: "0 auto 8px",
+                      lineHeight: "30px",
+                      color: isHovered ? "#a3a3a3" : "#555555",
+                      marginBottom: 13,
                       textAlign: "center",
                       transition: "color 0.3s linear",
                     }}
@@ -140,11 +139,11 @@ export default function Services() {
                         position: "relative",
                         fontFamily: '"Titillium Web", sans-serif',
                         fontSize: 13,
-                        fontWeight: 500,
-                        color: isHovered ? "#ffffff" : "#111111",
+                        fontWeight: 600,
+                        color: isHovered ? "#ffffff" : "#1a1a1a",
                         textTransform: "uppercase",
                         zIndex: 0,
-                        letterSpacing: "0.14em",
+                        letterSpacing: "0.5px",
                         textDecoration: "none",
                         opacity: isHovered ? 0.9 : 1,
                         transition: "color 0.3s linear, opacity 0.3s linear",
@@ -155,13 +154,15 @@ export default function Services() {
                         aria-hidden="true"
                         style={{
                           position: "absolute",
-                          background: isHovered ? "#808080" : "#DCDCDC",
-                          bottom: -4,
-                          left: -8,
-                          width: 36,
-                          height: 18,
+                          background: isHovered ? "#808080" : "#dddddd",
+                          bottom: -3,
+                          left: -7,
+                          width: isHovered ? "calc(100% + 14px)" : 20,
+                          height: 12,
                           zIndex: -1,
-                          transition: "background 0.3s linear",
+                          transition: isHovered
+                            ? "width 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), background 0.3s linear"
+                            : "width 0.3s linear, background 0.3s linear",
                         }}
                       />
                       READ MORE
