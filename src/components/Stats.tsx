@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { stats } from "@/lib/site-data";
 
-function Counter({ value, suffix }: { value: number; suffix: string }) {
+function Counter({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [n, setN] = useState(0);
   const [active, setActive] = useState(false);
@@ -40,9 +40,8 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   }, [active, value]);
 
   return (
-    <span ref={ref} className="counter-value" style={{ color: "#1a1a1a" }}>
+    <span ref={ref} className="counter-value" style={{ color: "#c2c2c2" }}>
       {n}
-      {suffix}
     </span>
   );
 }
@@ -51,31 +50,30 @@ export default function Stats() {
   return (
     <div
       className="relative w-full"
-      style={{ background: "#ffffff", padding: "60px 0 80px" }}
+      style={{ background: "#ffffff", padding: "80px 0 110px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="relative mx-auto" style={{ maxWidth: 1200, padding: "0 30px" }}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[30px]">
           {stats.map((s) => (
             <div key={s.label} className="text-center reveal" data-reveal>
               <div className="reveal flex items-center justify-center gap-2" data-reveal>
                 <span className="counter-bracket">[</span>
-                <Counter value={s.value} suffix="" />
+                <Counter value={s.value} />
                 <span className="counter-bracket">+]</span>
               </div>
-              <div
+              <h6
                 style={{
-                  fontFamily: "var(--font-titillium)",
+                  fontFamily: '"Raleway", sans-serif',
                   fontSize: 16,
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  letterSpacing: "1.5px",
+                  fontWeight: 400,
                   color: "#555555",
                   lineHeight: "30px",
                   marginTop: 14,
+                  textAlign: "center",
                 }}
               >
                 {s.label}
-              </div>
+              </h6>
             </div>
           ))}
         </div>
