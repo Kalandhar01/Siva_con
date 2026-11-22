@@ -53,23 +53,24 @@ export default function Stats() {
       className="relative w-full"
       style={{ background: "#ffffff", padding: "60px 0 80px" }}
     >
-      <div className="relative mx-auto px-6 md:px-[210px]" style={{ maxWidth: "none" }}>
+      <div className="relative mx-auto px-6 md:px-[90px]" style={{ maxWidth: "none" }}>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s) => (
             <div key={s.label} className="text-center" data-reveal>
               <div className="reveal flex items-center justify-center gap-2">
                 <span className="counter-bracket">[</span>
-                <Counter value={s.value} suffix={s.suffix} />
-                <span className="counter-bracket">]</span>
+                <Counter value={s.value} suffix="" />
+                <span className="counter-bracket">+]</span>
               </div>
               <div
                 style={{
                   fontFamily: "var(--font-titillium)",
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "1.5px",
-                  color: "#1a1a1a",
+                  color: "#555555",
+                  lineHeight: "30px",
                   marginTop: 14,
                 }}
               >
