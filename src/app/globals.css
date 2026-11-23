@@ -57,12 +57,12 @@ a { color: inherit; text-decoration: none; }
   width: 1px;
   background: rgba(0, 0, 0, 0.08);
 }
-.site-frame::before { left: 50%; transform: translateX(-766px); }
-.site-frame::after { left: 50%; transform: translateX(764px); }
+.site-frame::before { left: 90px; }
+.site-frame::after { right: 90px; }
 
-@media (max-width: 1440px) {
-  .site-frame::before { left: 3%; transform: none; }
-  .site-frame::after { right: 3%; left: auto; }
+@media (max-width: 768px) {
+  .site-frame::before { left: 3%; }
+  .site-frame::after { right: 3%; }
 }
 
 /* ---------- Reveal on scroll ---------- */

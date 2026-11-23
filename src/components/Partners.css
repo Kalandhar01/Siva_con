@@ -2,6 +2,23 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Dark bar sits between the page guide lines (90px in on desktop) */
+.partners-shell {
+  margin-left: 90px;
+  margin-right: 90px;
+  padding: 40px 0;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .partners-shell {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+
 .marquee-track {
   display: flex;
   animation: marquee-scroll 30s linear infinite;

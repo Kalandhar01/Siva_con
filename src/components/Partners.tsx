@@ -22,10 +22,7 @@ export default function Partners() {
   );
 
   return (
-    <div
-      className="relative w-full overflow-hidden px-6 md:px-[210px]"
-      style={{ background: "#1a1a1a", padding: "40px 0" }}
-    >
+    <div className="partners-shell">
       <div className="marquee-track">
         {set}
         {set}
