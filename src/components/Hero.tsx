@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "@/components/Button";
+import "./Hero.css";
 
 const slides = [
   { image: "/sivra/hero-1.jpg", title: ["Simple. Authentic.", "Close to Nature"] },
@@ -19,7 +20,7 @@ const IMG_H = 752;
 
 type Slide = (typeof slides)[number];
 
-function MobileHeroCopy({ slide, slideIndex, active }: { slide: Slide; slideIndex: number; active: boolean }) {
+function MobileHeroCopy({ slide, slideIndex, active, total }: { slide: Slide; slideIndex: number; active: boolean; total: number }) {
   const segments = [
     slide.title[0],
     slide.title[1],
@@ -63,6 +64,10 @@ function MobileHeroCopy({ slide, slideIndex, active }: { slide: Slide; slideInde
 
   return (
     <>
+      <div className="hero-eyebrow" style={{ marginBottom: 18 }}>
+        <span className="hero-eyebrow-line" />
+        Architecture &amp; Interior
+      </div>
       <h1
         key={`title-${slideIndex}`}
         className="mobile-hero-title"
@@ -108,6 +113,14 @@ function MobileHeroCopy({ slide, slideIndex, active }: { slide: Slide; slideInde
           </Button>
         </div>
       )}
+
+      <div className="hero-card-meta">
+        <span>{String(slideIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</span>
+        <span className="hero-meta-line">
+          <i style={{ width: `${((slideIndex + 1) / total) * 100}%` }} />
+        </span>
+        <span>Est. 2012</span>
+      </div>
     </>
   );
 }
@@ -161,9 +174,10 @@ export default function Hero() {
               style={{ objectPosition: "center", zIndex: i === index ? 2 : 1 }}
             />
           ))}
+          <div className="hero-mobile-vignette" aria-hidden />
           {/* Frosted content card */}
           <div
-            className="absolute left-4 right-4"
+            className="absolute left-4 right-4 hero-mobile-card"
             style={{
               top: "38%",
               background: "rgba(255,255,255,0.88)",
@@ -179,28 +193,33 @@ export default function Hero() {
               pointerEvents: cardVisible ? "auto" : "none",
             }}
           >
-            <MobileHeroCopy slide={slides[index]} slideIndex={index} active={cardVisible} />
+            <MobileHeroCopy slide={slides[index]} slideIndex={index} active={cardVisible} total={slides.length} />
           </div>
           {/* Slider indicator */}
           <div
             className="absolute left-1/2 -translate-x-1/2 flex items-center"
             style={{ bottom: 20, gap: 10, zIndex: 10 }}
           >
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,255,255,0.6)" }} />
-            <span
-              style={{
-                width: 42,
-                height: 42,
-                borderRadius: "50%",
-                border: "1px solid rgba(255,255,255,0.75)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ffffff" }} />
-            </span>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,255,255,0.6)" }} />
+            {slides.map((_, i) => (
+              <span
+                key={i}
+                className={`hero-mobile-indicator-dot${i === index ? " hero-mobile-indicator-ring" : ""}`}
+                style={{
+                  width: i === index ? 42 : 6,
+                  height: i === index ? 42 : 6,
+                  borderRadius: "50%",
+                  border: i === index ? "1px solid rgba(184,155,94,0.9)" : "none",
+                  background: i === index ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.6)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {i === index && (
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#b89b5e" }} />
+                )}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -218,6 +237,8 @@ export default function Hero() {
           }}
           aria-hidden
         />
+        <div className="hero-blueprint-grid" aria-hidden />
+        <div className="hero-noise" aria-hidden />
 
         <div className="relative h-full" style={{ paddingTop: 92 }}>
           {/* Text column */}
@@ -230,7 +251,12 @@ export default function Hero() {
             }}
           >
             <div key={`t-${index}`} className="hero-slide-enter" style={{ position: "relative" }}>
-              <div style={{ position: "relative", display: "inline-block" }}>
+              <span className="hero-ghost-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <div className="hero-eyebrow hero-eyebrow--desktop hero-stagger-0">
+                <span className="hero-eyebrow-line" />
+                Architecture &amp; Interior Studio
+              </div>
+              <div className="hero-heading-wrap" style={{ position: "relative", display: "inline-block" }}>
                 {/* Circular badge stamp - top right of headline */}
                 <div
                   className="circle-text absolute"
@@ -282,8 +308,29 @@ export default function Hero() {
                 <br />
                 why, from the first day of the activity of the studio.
               </p>
-              <div style={{ marginTop: 44, marginLeft: 0, paddingBottom: 24, opacity: buttonVisible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+              <div className="hero-slide-progress">
+                <strong>{String(index + 1).padStart(2, "0")}</strong>
+                <span className="hero-progress-line">
+                  <i style={{ width: `${((index + 1) / slides.length) * 100}%` }} />
+                </span>
+                <span>{String(slides.length).padStart(2, "0")}</span>
+              </div>
+              <div style={{ marginTop: 32, marginLeft: 0, opacity: buttonVisible ? 1 : 0, transition: "opacity 0.22s ease" }}>
                 <Button href="#portfolio">View Projects</Button>
+              </div>
+              <a href="#about" className="hero-text-link" style={{ marginTop: 26 }}>
+                Discover our story <span aria-hidden>↗</span>
+              </a>
+              <div className="hero-stats">
+                <div className="hero-stat">
+                  <strong>200+</strong>
+                  <span>Projects Delivered</span>
+                </div>
+                <span className="hero-stat-divider" />
+                <div className="hero-stat">
+                  <strong>12+</strong>
+                  <span>Years of Craft</span>
+                </div>
               </div>
             </div>
           </div>
@@ -291,7 +338,7 @@ export default function Hero() {
           {/* Image */}
           <div
             key={`i-${index}`}
-            className="hero-image-enter absolute z-10 hidden md:block"
+            className="hero-image-enter hero-image-shell absolute z-10 hidden md:block"
             data-img-reveal
             style={{
               right: 0,
@@ -310,6 +357,15 @@ export default function Hero() {
               className="w-full h-full object-cover"
               style={{ objectPosition: "right center" }}
             />
+            <div className="hero-image-shade" aria-hidden />
+            <span className="hero-crop-mark hero-crop-mark--tl" aria-hidden />
+            <span className="hero-crop-mark hero-crop-mark--tr" aria-hidden />
+            <span className="hero-crop-mark hero-crop-mark--bl" aria-hidden />
+            <span className="hero-crop-mark hero-crop-mark--br" aria-hidden />
+            <div className="hero-slide-count" aria-hidden>
+              <strong>{String(index + 1).padStart(2, "0")}</strong>
+              <span> / {String(slides.length).padStart(2, "0")}</span>
+            </div>
 
             {/* Circle text badge */}
             <div
@@ -380,6 +436,10 @@ export default function Hero() {
               </button>
             </div>
           </div>
+        </div>
+        <div className="hero-scroll-cue" aria-hidden>
+          <span>Scroll</span>
+          <i />
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/site-data";
 
 const navLinks = [
@@ -24,12 +24,23 @@ export default function Header({
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
     if (!transparent && !mobileTransparent) return;
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 60);
+      if (mobileTransparent) {
+        if (y <= 80) setNavHidden(false);
+        else if (y > lastY.current + 4) setNavHidden(true);
+        else if (y < lastY.current - 4) setNavHidden(false);
+      }
+      lastY.current = y;
+    };
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [transparent, mobileTransparent]);
 
@@ -65,7 +76,8 @@ export default function Header({
               : contactTheme || solidDark
                 ? "#202020"
                 : "#232323",
-          transition: "background 0.3s ease",
+          transition: "background 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
+          transform: navHidden ? "translateY(-100%)" : "translateY(0)",
         }}
       >
         {/* White square emblem tile */}
