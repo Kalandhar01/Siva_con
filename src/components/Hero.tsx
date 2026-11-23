@@ -135,7 +135,7 @@ export default function Hero() {
     setTimeout(() => {
       setIndex((i) => (i + d + slides.length) % slides.length);
       setButtonVisible(true);
-    }, 400);
+    }, 220);
   };
 
   return (
@@ -282,7 +282,7 @@ export default function Hero() {
                 <br />
                 why, from the first day of the activity of the studio.
               </p>
-              <div style={{ marginTop: 44, marginLeft: 0, paddingBottom: 24, opacity: buttonVisible ? 1 : 0, transition: "opacity 0.4s ease" }}>
+              <div style={{ marginTop: 44, marginLeft: 0, paddingBottom: 24, opacity: buttonVisible ? 1 : 0, transition: "opacity 0.22s ease" }}>
                 <Button href="#portfolio">View Projects</Button>
               </div>
             </div>

@@ -24,8 +24,8 @@ export default function Button({
   children = "View Projects",
   href,
   onClick,
-  width = 150,
-  height = 50,
+  width = 160,
+  height = 54,
   className = "",
   style,
   type = "button",
@@ -35,8 +35,8 @@ export default function Button({
   "aria-label": ariaLabel,
 }: ButtonProps) {
   const buttonStyle: React.CSSProperties = {
-    width: toCssSize(width, 150),
-    height: toCssSize(height, 50),
+    width: toCssSize(width, 160),
+    height: toCssSize(height, 54),
     ...style,
   };
 

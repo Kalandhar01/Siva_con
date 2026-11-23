@@ -174,7 +174,7 @@ export default function Skills() {
         </div>
       </section>
 
-      <div className="partner-block" style={{ marginTop: 0 }}>
+      <div style={{ marginTop: 80 }}>
         <Partners />
       </div>
 

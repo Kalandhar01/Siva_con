@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <RevealObserver />
-      <div className="relative page-shell">
+      <div className="relative">
         <div className="site-frame" aria-hidden />
         <SocialSidebar />
         <Header mobileTransparent />
