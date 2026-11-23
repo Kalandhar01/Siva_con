@@ -7,7 +7,9 @@
 .partners-shell {
   margin-left: 90px;
   margin-right: 90px;
-  padding: 40px 0;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   background: #1a1a1a;
 }
@@ -16,6 +18,7 @@
   .partners-shell {
     margin-left: 3%;
     margin-right: 3%;
+    min-height: 180px;
   }
 }
 

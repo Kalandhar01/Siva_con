@@ -5,6 +5,7 @@ import { projects } from "@/lib/site-data";
 import "./Portfolio.css";
 
 const TILE = 315;
+const TILE_HEIGHT = 420;
 const INTERVAL = 5000;
 const DURATION = 1500;
 
@@ -119,7 +120,7 @@ export default function Portfolio() {
                 aria-hidden={clone || undefined}
                 tabIndex={clone ? -1 : undefined}
                 className="portfolio-item relative block shrink-0"
-                style={{ width: TILE, height: TILE, overflow: "hidden" }}
+                style={{ width: TILE, height: TILE_HEIGHT, overflow: "hidden" }}
               >
                 <img
                   src={p.image}
