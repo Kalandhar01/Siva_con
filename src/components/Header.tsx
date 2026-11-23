@@ -1,26 +1,72 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { services } from "@/lib/site-data";
 
 const navLinks = [
   { label: "HOME", href: "#home", chevron: true },
   { label: "PAGES", href: "#about", chevron: true },
-  { label: "SERVICES", href: "#services", chevron: true },
+  { label: "SERVICES", href: "/services", chevron: true },
   { label: "PORTFOLIO", href: "#portfolio", chevron: true },
   { label: "BLOG", href: "#blog", chevron: true },
-  { label: "CONTACTS", href: "#contact", chevron: false },
+  { label: "CONTACTS", href: "/contacts", chevron: false },
 ];
 
-export default function Header() {
+export default function Header({
+  transparent = false,
+  contactTheme = false,
+  mobileTransparent = false,
+}: {
+  transparent?: boolean;
+  contactTheme?: boolean;
+  mobileTransparent?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!transparent && !mobileTransparent) return;
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [transparent, mobileTransparent]);
+
+  const transparentMode = transparent && !scrolled;
+  const solidDark = transparent && scrolled;
+  const lightText = transparent || contactTheme;
+  const headerHeight = contactTheme ? 80 : 92;
+  const headerBg = transparentMode
+    ? "transparent"
+    : contactTheme || solidDark
+      ? "#202020"
+      : "#FFFFFF";
+  const mobileTopTransparent = mobileTransparent && !scrolled;
+  const mobileBrandColor = mobileTransparent
+    ? mobileTopTransparent ? "#1A1A1A" : "#FFFFFF"
+    : "#D8D8D8";
+  const mobileIconColor = mobileTransparent && mobileTopTransparent ? "#1A1A1A" : "#FFFFFF";
 
   return (
     <>
       {/* Mobile header bar (<=768px) */}
       <header
-        className="md:hidden sticky top-0 z-[100] h-[64px] box-border flex items-center"
-        style={{ background: "#232323" }}
+        className={`md:hidden ${
+          transparent || mobileTransparent ? "fixed left-0 right-0" : "sticky"
+        } top-0 z-[100] h-[64px] box-border flex items-center`}
+        style={{
+          background: mobileTransparent
+            ? scrolled
+              ? "#202020"
+              : "transparent"
+            : transparentMode
+              ? "transparent"
+              : contactTheme || solidDark
+                ? "#202020"
+                : "#232323",
+          transition: "background 0.3s ease",
+        }}
       >
         {/* White square emblem tile */}
         <div
@@ -44,7 +90,7 @@ export default function Header() {
               fontFamily: "var(--font-titillium)",
               fontSize: 11,
               fontWeight: 500,
-              color: "#D8D8D8",
+              color: mobileBrandColor,
               textTransform: "uppercase",
               letterSpacing: "1.5px",
               lineHeight: 1.2,
@@ -57,7 +103,7 @@ export default function Header() {
               fontFamily: "var(--font-titillium)",
               fontSize: 11,
               fontWeight: 500,
-              color: "#D8D8D8",
+              color: mobileBrandColor,
               textTransform: "uppercase",
               letterSpacing: "1.5px",
               lineHeight: 1.2,
@@ -75,7 +121,7 @@ export default function Header() {
             href="#contact"
             aria-label="Cart"
             className="relative flex items-center"
-            style={{ color: "#FFFFFF" }}
+            style={{ color: mobileIconColor }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />
@@ -101,7 +147,7 @@ export default function Header() {
             onClick={() => setSearch(true)}
             aria-label="Search"
             className="flex items-center"
-            style={{ color: "#FFFFFF" }}
+            style={{ color: mobileIconColor }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <circle cx="11" cy="11" r="8" />
@@ -113,21 +159,28 @@ export default function Header() {
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             className="flex flex-col"
-            style={{ gap: 5, color: "#FFFFFF" }}
+            style={{ gap: 5, color: mobileIconColor }}
           >
-            <span style={{ height: 2, width: 20, background: "#FFFFFF" }} />
-            <span style={{ height: 2, width: 20, background: "#FFFFFF" }} />
-            <span style={{ height: 2, width: 20, background: "#FFFFFF" }} />
+            <span style={{ height: 2, width: 20, background: mobileIconColor }} />
+            <span style={{ height: 2, width: 20, background: mobileIconColor }} />
+            <span style={{ height: 2, width: 20, background: mobileIconColor }} />
           </button>
         </div>
       </header>
 
       {/* Desktop header */}
       <header
-        className="hidden md:flex w-full sticky top-0 z-[100] h-[92px] box-border"
+        className={`hidden md:flex w-full ${
+          transparent ? "fixed left-0 right-0" : "sticky"
+        } top-0 z-[100] ${contactTheme ? "h-[80px]" : "h-[92px]"} box-border`}
         style={{
-          background: "#FFFFFF",
-          borderBottom: "1px solid #EAEAEA",
+          background: headerBg,
+          borderBottom: transparentMode
+            ? "none"
+            : solidDark
+              ? "1px solid rgba(255,255,255,0.15)"
+              : "1px solid #EAEAEA",
+          transition: "background 0.3s ease, border-color 0.3s ease",
         }}
       >
         <div className="flex items-stretch" style={{ width: "100%", height: "100%", margin: 0, padding: 0 }}>
@@ -135,13 +188,20 @@ export default function Header() {
           <div className="flex items-stretch" style={{ width: "auto", minWidth: 0, padding: 0, margin: 0, flex: "0 0 auto" }}>
             {/* Logo square */}
             <div
-              className="flex items-center justify-center shrink-0 w-[64px] h-[64px] md:w-[92px] md:h-[92px]"
-              style={{ background: "#1A1A1A", margin: 0, padding: 0 }}
+              className={`flex items-center justify-center shrink-0 w-[64px] h-[64px] ${
+                contactTheme ? "md:w-[80px] md:h-[80px]" : "md:w-[92px] md:h-[92px]"
+              }`}
+              style={{
+                background: contactTheme ? "#FFFFFF" : "#1A1A1A",
+                margin: 0,
+                padding: 0,
+              }}
             >
               <img
                 src="/sivra/brand-logo.png"
                 alt="SIVRA Buildcon"
                 className="h-[44px] md:h-[56px] w-auto object-contain object-center"
+                style={contactTheme ? { filter: "brightness(0)" } : undefined}
               />
             </div>
             {/* Brand name area with blueprint watermark */}
@@ -171,20 +231,32 @@ export default function Header() {
               />
               {/* Desktop: brand name text */}
               <div
-                className="hidden md:block text-[13px] tracking-[2.5px]"
+                className="hidden md:block text-[11px] tracking-[3px]"
                 style={{
                   fontFamily: "var(--font-titillium)",
                   fontWeight: 500,
-                  color: "#222222",
+                  color: lightText ? "#FFFFFF" : "#222222",
                   textTransform: "uppercase",
                   lineHeight: 1.2,
                   position: "relative",
                   zIndex: 1,
                 }}
               >
-                SIVRA
-                <br />
-                BUILDCON
+                {contactTheme ? (
+                  <>
+                    THERATIO
+                    <br />
+                    INTERIOR
+                    <br />
+                    STUDIO
+                  </>
+                ) : (
+                  <>
+                    SIVRA
+                    <br />
+                    BUILDCON
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -192,37 +264,53 @@ export default function Header() {
           {/* CENTER – Navigation (desktop only) */}
           <nav
             className="hidden lg:flex items-center justify-center"
-            style={{ flex: 1, gap: 0, background: "#FFFFFF" }}
+            style={{
+              flex: 1,
+              gap: 0,
+              background: headerBg,
+              transition: "background 0.3s ease",
+            }}
           >
             {navLinks.map((l) => (
-              <div key={l.label} className="dropdown-parent relative" style={{ display: "flex", alignItems: "center", height: 92 }}>
+              <div key={l.label} className="dropdown-parent relative" style={{ display: "flex", alignItems: "center", height: headerHeight }}>
                 <a
                   href={l.href}
                   className="relative flex items-center gap-1.5 header-link"
                   style={{
                     fontFamily: "var(--font-titillium)",
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: 500,
                     textTransform: "uppercase",
-                    letterSpacing: "0",
-                    padding: "0 17px",
-                    height: 92,
+                    letterSpacing: "1px",
+                    padding: "0 15px",
+                    height: headerHeight,
                     display: "flex",
                     alignItems: "center",
                     whiteSpace: "nowrap",
                     position: "relative",
+                    color: lightText ? "#FFFFFF" : "#333333",
+                    boxShadow:
+                      contactTheme && l.label === "CONTACTS"
+                        ? "inset 0 -2px 0 rgba(255,255,255,0.75)"
+                        : undefined,
                   }}
                 >
                   {l.label}
                   {l.chevron && (
                     <svg width="8" height="5" viewBox="0 0 8 5" fill="none" style={{ marginTop: 1 }}>
-                      <path d="M1 1l3 3 3-3" stroke="#333333" strokeWidth="1.2" />
+                      <path d="M1 1l3 3 3-3" stroke={lightText ? "#FFFFFF" : "#333333"} strokeWidth="1.2" />
                     </svg>
                   )}
                 </a>
                 {l.chevron && (
-                  <div className="dropdown">
-                    <a href={l.href}>Sample Page</a>
+                  <div className="dropdown dropdown-dark dropdown-animated">
+                    {l.label === "SERVICES"
+                      ? services.map((s) => (
+                          <a key={s.slug} href={`/services/${s.slug}`}>{s.title}</a>
+                        ))
+                      : (
+                          <a href={l.href}>Sample Page</a>
+                        )}
                   </div>
                 )}
               </div>
@@ -233,12 +321,21 @@ export default function Header() {
           <div className="flex-1 lg:hidden" />
 
           {/* RIGHT – Action icons */}
-          <div className="flex items-stretch justify-end" style={{ width: "auto", minWidth: 0, background: "#FFFFFF", alignSelf: "stretch" }}>
+          <div
+            className="flex items-stretch justify-end"
+            style={{
+              width: "auto",
+              minWidth: 0,
+              background: headerBg,
+              alignSelf: "stretch",
+              transition: "background 0.3s ease",
+            }}
+          >
             <a
               href="#contact"
               aria-label="Cart"
               className="relative flex items-center nav-icon"
-              style={{ margin: "0 20px 0 0", color: "#1A1A1A", alignSelf: "center", paddingLeft: 10 }}
+              style={{ margin: "0 20px 0 0", color: lightText ? "#FFFFFF" : "#1A1A1A", alignSelf: "center", paddingLeft: 10 }}
             >
               <svg className="w-[18px] h-[18px] md:w-[25px] md:h-[25px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />
@@ -255,7 +352,7 @@ export default function Header() {
               onClick={() => setSearch(true)}
               aria-label="Search"
               className="flex items-center nav-icon"
-              style={{ margin: "0 20px 0 0", color: "#555555", alignSelf: "center" }}
+              style={{ margin: "0 20px 0 0", color: lightText ? "#FFFFFF" : "#555555", alignSelf: "center" }}
             >
               <svg className="w-[18px] h-[18px] md:w-[25px] md:h-[25px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <circle cx="11" cy="11" r="8" />
@@ -264,18 +361,23 @@ export default function Header() {
             </button>
             <div
               className="flex items-center"
-              style={{ borderLeft: "1px solid rgba(0,0,0,0.1)", paddingLeft: 32, paddingRight: 20, alignSelf: "center" }}
+              style={{
+                borderLeft: lightText ? "1px solid rgba(255,255,255,0.2)" : "1px solid rgba(0,0,0,0.1)",
+                paddingLeft: 32,
+                paddingRight: 20,
+                alignSelf: "center",
+              }}
             >
               <button
                 type="button"
                 onClick={() => setOpen(true)}
                 aria-label="Open menu"
                 className="flex flex-col gap-[5px] w-[18px] md:w-[24px]"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: lightText ? "#FFFFFF" : "#1A1A1A" }}
               >
-                <span style={{ height: 2, width: "100%", background: "#1A1A1A" }} />
-                <span style={{ height: 2, width: "70%", background: "#1A1A1A" }} />
-                <span style={{ height: 2, width: "100%", background: "#1A1A1A" }} />
+                <span style={{ height: 2, width: "100%", background: lightText ? "#FFFFFF" : "#1A1A1A" }} />
+                <span style={{ height: 2, width: "70%", background: lightText ? "#FFFFFF" : "#1A1A1A" }} />
+                <span style={{ height: 2, width: "100%", background: lightText ? "#FFFFFF" : "#1A1A1A" }} />
               </button>
             </div>
           </div>

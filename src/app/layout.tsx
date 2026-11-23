@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Titillium_Web, Raleway } from "next/font/google";
+import { Titillium_Web, Raleway, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 
 const titillium = Titillium_Web({
@@ -16,6 +16,13 @@ const raleway = Raleway({
   display: "swap",
 });
 
+const josefin = Josefin_Sans({
+  variable: "--font-josefin",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "SIVRA Buildcon — Architecture & Interior Design Studio",
   description:
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${titillium.variable} ${raleway.variable} h-full antialiased`}>
+    <html lang="en" className={`${titillium.variable} ${raleway.variable} ${josefin.variable} h-full antialiased`}>
       <head>
         <link
           rel="stylesheet"

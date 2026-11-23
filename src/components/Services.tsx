@@ -108,7 +108,7 @@ export default function Services() {
                     }}
                   >
                     <a
-                      href="#"
+                      href={`/services/${s.slug}`}
                       style={{
                         color: "inherit",
                         textDecoration: "none",
@@ -132,7 +132,7 @@ export default function Services() {
                   </p>
                   <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
                     <a
-                      href="#"
+                      href={`/services/${s.slug}`}
                       style={{
                         position: "relative",
                         fontFamily: '"Titillium Web", sans-serif',

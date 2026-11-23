@@ -3,7 +3,7 @@ import "./About.css";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-0" style={{ background: "#ffffff" }}>
+    <section id="about" className="relative py-0" style={{ background: "#ffffff", paddingTop: 80 }}>
       <div className="relative px-6 md:px-[90px]" style={{ maxWidth: "none", margin: "0 auto" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Image (bleeds left) */}

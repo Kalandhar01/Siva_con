@@ -18,7 +18,7 @@ export default function Home() {
       <div className="relative page-shell">
         <div className="site-frame" aria-hidden />
         <SocialSidebar />
-        <Header />
+        <Header mobileTransparent />
         <main>
           <Hero />
           <About />

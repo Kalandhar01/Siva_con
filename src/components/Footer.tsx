@@ -259,7 +259,7 @@ export default function Footer() {
               {services.map((service) => (
                 <li key={service}>
                   <a
-                    href="#services"
+                    href={`/services/${service.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`}
                     className="tf-project-link"
                     style={{
                       fontSize: 16.5,

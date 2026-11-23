@@ -17,10 +17,112 @@ const IMG_X = 850;
 const IMG_W = 760;
 const IMG_H = 752;
 
+type Slide = (typeof slides)[number];
+
+function MobileHeroCopy({ slide, slideIndex, active }: { slide: Slide; slideIndex: number; active: boolean }) {
+  const segments = [
+    slide.title[0],
+    slide.title[1],
+    "Our goal is to create reliable relations with customers, that is",
+    "why, from the first day of the activity of the studio.",
+    "View Projects",
+  ];
+  const offsets = segments.map((_, i) =>
+    segments.slice(0, i).reduce((sum, s) => sum + s.length + 1, 0)
+  );
+  const full = segments.join("\n");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(0);
+    if (!active) return;
+
+    let interval = 0;
+    interval = window.setInterval(() => {
+      setCount((c) => {
+        if (c >= full.length) {
+          window.clearInterval(interval);
+          return c;
+        }
+        return c + 1;
+      });
+    }, 28);
+
+    return () => {
+      if (interval) window.clearInterval(interval);
+    };
+  }, [slideIndex, full, active]);
+
+  const parts = full.slice(0, count).split("\n");
+  const current = parts.length - 1;
+  const done = count >= full.length;
+  const caret = (i: number) => !done && current === i
+    ? <span className="type-caret" aria-hidden="true" />
+    : null;
+  const started = (i: number) => count > offsets[i];
+
+  return (
+    <>
+      <h1
+        key={`title-${slideIndex}`}
+        className="mobile-hero-title"
+        style={{
+          fontFamily: "var(--font-titillium), 'Titillium Web', sans-serif",
+          fontSize: 32,
+          fontWeight: 300,
+          lineHeight: 1.15,
+          letterSpacing: 0.2,
+          color: "#1A1A1A",
+          margin: 0,
+          minHeight: 76,
+        }}
+      >
+        <span>{parts[0] ?? ""}{caret(0)}</span>
+        <br />
+        <span>{parts[1] ?? ""}{caret(1)}</span>
+      </h1>
+
+      {started(2) && (
+        <p
+          style={{
+            fontFamily: "var(--font-titillium), 'Titillium Web', sans-serif",
+            fontSize: 14,
+            lineHeight: 1.55,
+            color: "#666666",
+            marginTop: 14,
+            marginBottom: 0,
+            minHeight: 44,
+          }}
+        >
+          <span>{parts[2] ?? ""}{caret(2)}</span>
+          <br />
+          <span>{parts[3] ?? ""}{caret(3)}</span>
+        </p>
+      )}
+
+      {started(4) && (
+        <div style={{ marginTop: 20 }}>
+          <Button href="#portfolio">
+            <span>{parts[4] ?? ""}</span>
+            {caret(4)}
+          </Button>
+        </div>
+      )}
+    </>
+  );
+}
+
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [buttonVisible, setButtonVisible] = useState(true);
+  const [cardVisible, setCardVisible] = useState(false);
+
+  useEffect(() => {
+    setCardVisible(false);
+    const show = window.setTimeout(() => setCardVisible(true), 1000);
+    return () => window.clearTimeout(show);
+  }, [index]);
 
   useEffect(() => {
     if (paused) return;
@@ -46,63 +148,43 @@ export default function Hero() {
     >
       {/* Mobile hero (<=768px) */}
       <div className="md:hidden">
-        <div className="relative w-full h-[520px] overflow-hidden">
-          <Image
-            src={slides[index].image}
-            alt=""
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover"
-            style={{ objectPosition: "center" }}
-          />
+        <div className="relative w-full overflow-hidden" style={{ height: "100vh", minHeight: 520 }}>
+          {slides.map((slide, i) => (
+            <Image
+              key={slide.image}
+              src={slide.image}
+              alt=""
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              className={`object-cover mobile-hero-slide${i === index ? " is-active" : ""}`}
+              style={{ objectPosition: "center", zIndex: i === index ? 2 : 1 }}
+            />
+          ))}
           {/* Frosted content card */}
           <div
             className="absolute left-4 right-4"
             style={{
-              top: "26%",
-              background: "rgba(255,255,255,0.78)",
-              backdropFilter: "blur(4px)",
-              WebkitBackdropFilter: "blur(4px)",
-              padding: "28px 24px",
+              top: "38%",
+              background: "rgba(255,255,255,0.88)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              padding: "32px 26px",
               borderRadius: 0,
+              boxShadow: "0 18px 50px rgba(0,0,0,0.18)",
+              zIndex: 10,
+              opacity: cardVisible ? 1 : 0,
+              transform: cardVisible ? "none" : "translateY(12px)",
+              transition: "opacity 0.5s ease, transform 0.5s ease",
+              pointerEvents: cardVisible ? "auto" : "none",
             }}
           >
-            <h1
-              style={{
-                fontFamily: "var(--font-titillium)",
-                fontSize: 32,
-                fontWeight: 300,
-                lineHeight: 1.15,
-                color: "#1A1A1A",
-                margin: 0,
-              }}
-            >
-              {slides[index].title[0]}
-              <br />
-              {slides[index].title[1]}
-            </h1>
-            <p
-              style={{
-                fontFamily: "var(--font-titillium)",
-                fontSize: 14,
-                lineHeight: 1.55,
-                color: "#666666",
-                marginTop: 14,
-              }}
-            >
-              Our goal is to create reliable relations with customers, that is
-              <br />
-              why, from the first day of the activity of the studio.
-            </p>
-            <div style={{ marginTop: 20 }}>
-              <Button href="#portfolio">View Projects</Button>
-            </div>
+            <MobileHeroCopy slide={slides[index]} slideIndex={index} active={cardVisible} />
           </div>
           {/* Slider indicator */}
           <div
             className="absolute left-1/2 -translate-x-1/2 flex items-center"
-            style={{ bottom: 20, gap: 10 }}
+            style={{ bottom: 20, gap: 10, zIndex: 10 }}
           >
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,255,255,0.6)" }} />
             <span
