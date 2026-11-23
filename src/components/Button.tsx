@@ -20,7 +20,7 @@ const toCssSize = (value: number | string | undefined, fallback: number) =>
 
 const baseClasses = [
   "group relative inline-flex max-w-full items-center justify-center",
-  "border-0 rounded-none bg-[#222222] px-[14px]",
+  "border-0 rounded-none bg-[#222222] px-[12px]",
   "text-center text-[10px] font-semibold uppercase leading-none tracking-[0.5px] text-white! no-underline",
   "whitespace-nowrap transition-colors duration-300 hover:bg-black",
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#222222]",
@@ -31,8 +31,8 @@ export default function Button({
   children = "View Projects",
   href,
   onClick,
-  width = 160,
-  height = 54,
+  width = 150,
+  height = 50,
   className = "",
   style,
   type = "button",
@@ -42,8 +42,8 @@ export default function Button({
   "aria-label": ariaLabel,
 }: ButtonProps) {
   const buttonStyle: React.CSSProperties = {
-    width: toCssSize(width, 160),
-    height: toCssSize(height, 54),
+    width: toCssSize(width, 150),
+    height: toCssSize(height, 50),
     ...style,
   };
 
@@ -64,12 +64,12 @@ export default function Button({
       {/* Vertical accent: starts below the top edge, ends 18px past the bottom. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute top-[8px] right-[-12px] block h-[calc(100%_+_8px)] w-[1px] scale-x-100 scale-y-100 origin-bottom bg-[#222222] transition-all duration-300 ease-out group-hover:scale-y-0"
+        className="pointer-events-none absolute top-[6px] right-[-8px] block h-[calc(100%_+_6px)] w-[1px] scale-x-100 scale-y-100 origin-bottom bg-[#222222] transition-all duration-300 ease-out group-hover:scale-y-0"
       />
       {/* Horizontal accent: starts inside the left edge and crosses the vertical line. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute bottom-[-8px] left-[8px] right-[-24px] block h-[1px] scale-x-100 scale-y-100 origin-right bg-[#222222] transition-all duration-300 ease-out group-hover:scale-x-0"
+        className="pointer-events-none absolute bottom-[-6px] left-[6px] right-[-16px] block h-[1px] scale-x-100 scale-y-100 origin-right bg-[#222222] transition-all duration-300 ease-out group-hover:scale-x-0"
       />
     </>
   );
